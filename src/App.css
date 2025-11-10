@@ -184,7 +184,7 @@ input[type="number"] {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-} */ 
+} */
 
 /* .orbit-oscillate {
   width: 100%;
@@ -288,4 +288,86 @@ input[type="number"] {
 
 .blog-body a:hover {
   @apply text-blue-800;
+}
+
+@font-face {
+    font-family: 'gilroy-light'; /* Choose a unique name for your font */
+    src: url('assets/fonts/gilroy/Gilroy-Light.woff2') format('woff2'),
+          url('assets/fonts/gilroy/Gilroy-Light.woff') format('woff');
+    font-weight: normal; /* Specify the font's weight (e.g., normal, bold, 400, 700) */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gilroy-regular'; /* Choose a unique name for your font */
+    src: url('assets/fonts/gilroy/Gilroy-Regular.woff2') format('woff2'),
+          url('assets/fonts/gilroy/Gilroy-Regular.woff') format('woff');
+    font-weight: normal; /* Specify the font's weight (e.g., normal, bold, 400, 700) */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gilroy-medium'; /* Choose a unique name for your font */
+    src: url('assets/fonts/gilroy/Gilroy-Medium.woff2') format('woff2'),
+          url('assets/fonts/gilroy/Gilroy-Medium.woff') format('woff');
+    font-weight: normal; /* Specify the font's weight (e.g., normal, bold, 400, 700) */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gilroy-semibold'; /* Choose a unique name for your font */
+    src: url('assets/fonts/gilroy/Gilroy-SemiBold.woff2') format('woff2'),
+          url('assets/fonts/gilroy/Gilroy-SemiBold.woff') format('woff');
+    font-weight: normal; /* Specify the font's weight (e.g., normal, bold, 400, 700) */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gilroy-bold'; /* Choose a unique name for your font */
+    src: url('assets/fonts/gilroy/Gilroy-Bold.woff2') format('woff2'),
+          url('assets/fonts/gilroy/Gilroy-Bold.woff') format('woff');
+    font-weight: normal; /* Specify the font's weight (e.g., normal, bold, 400, 700) */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gilroy-extrabold'; /* Choose a unique name for your font */
+    src: url('assets/fonts/gilroy/Gilroy-ExtraBold.woff2') format('woff2'),
+          url('assets/fonts/gilroy/Gilroy-ExtraBold.woff') format('woff');
+    font-weight: normal; /* Specify the font's weight (e.g., normal, bold, 400, 700) */
+    font-style: normal;
+}
+
+.font-gilroy-light {
+    font-family: 'gilroy-light', sans-serif;
+}
+
+.font-gilroy-regular {
+    font-family: 'gilroy-regular', sans-serif;
+}
+
+.font-gilroy-medium {
+    font-family: 'gilroy-medium', sans-serif;
+}
+
+.font-gilroy-semibold {
+    font-family: 'gilroy-semibold', sans-serif;
+}
+
+.font-gilroy-bold {
+    font-family: 'gilroy-bold', sans-serif;
+}
+
+.font-gilroy-extrabold {
+    font-family: 'gilroy-extrabold', sans-serif;
+}
+
+.bg-vector {
+  background-image: url('./assets/Vector.png');
+}
+
+.bg-radiant-ellipse {
+  background-image: url('./assets/radiant-ellipse.png');
+  background-repeat: no-repeat;
+  background-position: center;
 }
