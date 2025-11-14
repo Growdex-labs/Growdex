@@ -55,7 +55,7 @@ export default function Header() {
                 <div className={`flex items-center gap-4 rounded-lg
                     ${isMenu ? 'bg-yellow-400' : ''} transition-colors delay-300`}>
                     <div className={`
-                        flex items-center gap-8 text-gray-700 py-2 px-3 rounded-lg
+                        hidden md:flex items-center gap-8 text-gray-700 py-2 px-3 rounded-lg
                         transition-all duration-300 delay-300 origin-right
                         ${isMenu ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}`}>
                         <a href='#why' className="hover:text-black transition">Why Growdex?</a>
@@ -64,9 +64,9 @@ export default function Header() {
                         <a href='#clientele' className="hover:text-black transition">Clientele</a>
                     </div>
                     {/* Open menu list */}
-                    <button className={`
+                    <button className={`hidden
                         ${isMenu ? 'bg-yellow-400 text-black' : 'bg-neutral-900 text-white'}
-                        px-3 md:px-6 py-2 md:py-3 rounded-lg md:rounded-xl text-sm font-gilroy-medium whitespace-nowrap flex justify-center items-center gap-1 cursor-pointer transition-colors`} onClick={() => setIsMenu(!isMenu)}>
+                        px-3 md:px-6 py-2 md:py-3 rounded-lg md:rounded-xl text-sm font-gilroy-medium whitespace-nowrap md:flex justify-center items-center gap-1 cursor-pointer transition-colors`} onClick={() => setIsMenu(!isMenu)}>
                         <span className={`${isMenu ? 'opacity-0 scale-0' : 'opacity-100 scale-100'} transition-all`}>Menu</span>
                         {/*hamburger -> morph to X */}
                         <div className='relative ml-2 w-4 h-3 flex items-center justify-center'>
