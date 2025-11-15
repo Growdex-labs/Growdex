@@ -1,4 +1,5 @@
 import CoreServices from "../../../components/pages/agency/core-services/CoreServices";
+import EngineSection from "../../../components/pages/agency/EngineSection";
 import FirstSection from "../../../components/pages/agency/FirstSection";
 import Header from "../../../components/pages/agency/Header";
 import OurPartners from "../../../components/pages/agency/OurPartners";
@@ -18,6 +19,7 @@ export default function AgencyPage() {
       </p>
       <br />
       <CoreServices />
+      <EngineSection />
       {/* last section */}
       <OurPartners />
     </div>
