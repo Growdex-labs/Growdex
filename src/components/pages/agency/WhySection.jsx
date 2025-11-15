@@ -23,7 +23,7 @@ export default function WhySection() {
         },
     ];
   return (
-    <section className="mt-8 md:my-16 p-4 md:p-6 lg:p-8 backdrop-blur-3xl max-sm:pb-0">
+    <section className="mt-8 md:mt-16 p-4 md:p-6 lg:p-8 backdrop-blur-3xl max-sm:pb-0">
         <div className="relative mx-auto w-full md:w-screen max-w-7xl px-4">
             <h4 className="text-2xl md:text-4xl lg:text-6xl xl:text-7xl tracking-tight text-center">
                 Why Brands Choose Us

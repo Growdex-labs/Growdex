@@ -3,6 +3,7 @@ import EngineSection from "../../../components/pages/agency/EngineSection";
 import FirstSection from "../../../components/pages/agency/FirstSection";
 import Header from "../../../components/pages/agency/Header";
 import OurPartners from "../../../components/pages/agency/OurPartners";
+import TestimonialSection from "../../../components/pages/agency/testimonials/TestimonialSection";
 import WhySection from "../../../components/pages/agency/WhySection";
 
 
@@ -21,6 +22,7 @@ export default function AgencyPage() {
       <br />
       <CoreServices />
       <WhySection />
+      <TestimonialSection />
       <EngineSection />
       {/* last section */}
       <OurPartners />
