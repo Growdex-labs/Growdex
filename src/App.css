@@ -403,10 +403,20 @@ input[type="number"] {
 }
 
 
-
 @keyframes fadeInFromRight {
   0% {
     transform: translateX(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFromLeft {
+  0% {
+    transform: translateX(-10%);
     opacity: 0;
   }
   100% {

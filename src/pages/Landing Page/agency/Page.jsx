@@ -5,6 +5,7 @@ import Header from "../../../components/pages/agency/Header";
 import OurPartners from "../../../components/pages/agency/OurPartners";
 import TestimonialSection from "../../../components/pages/agency/testimonials/TestimonialSection";
 import WhySection from "../../../components/pages/agency/WhySection";
+import WhoWeWorkWithSection from "../../../components/pages/agency/work-with/WhoWeWorkWithSection";
 
 
 export default function AgencyPage() {
@@ -21,6 +22,7 @@ export default function AgencyPage() {
       </p>
       <br />
       <CoreServices />
+      <WhoWeWorkWithSection />
       <WhySection />
       <TestimonialSection />
       <EngineSection />
