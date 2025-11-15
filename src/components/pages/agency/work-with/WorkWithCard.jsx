@@ -39,8 +39,8 @@ export default function WorkWithCard({
             bg-cover bg-center font-gilroy-semibold pl-4 pb-4
             flex flex-col justify-end group transition-transform duration-300
 
-            ${isActive ? "scale-x-105" : ""}
-            ${isNextInRow || isPrevInRow ? "scale-x-95" : ""}
+            ${isActive ? "scale-x-110" : ""}
+            ${isNextInRow || isPrevInRow ? "scale-x-90" : ""}
         `}
         style={{ backgroundImage: `url(${url})` }}
     >
