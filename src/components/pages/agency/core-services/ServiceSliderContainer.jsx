@@ -111,7 +111,7 @@ export default function ServiceSliderContainer() {
             animation: direction
               ? direction === "left"
                 ? "fadeInFromRight 0.7s ease forwards"
-                : "slideInFromLeft 0.7s ease forwards"
+                : "fadeInFromLeft 0.7s ease forwards"
               : "none",
           }}
         >
