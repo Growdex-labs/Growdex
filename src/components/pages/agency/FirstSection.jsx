@@ -1,9 +1,9 @@
 import 'animate.css';
-import ArrowRightCircleIcon from "../../../assets/arrow-right-circle.svg";
 import PerfStrategyImg from "../../../assets/perf-strategy.png";
 import MultiPlatformImg from "../../../assets/multi-platform.png";
 import OptimizeCampaignImg from "../../../assets/optimize-campaign.png";
 import SplitText from '../../ui/SplitText';
+import AgencyButton from './Button';
 
 export default function FirstSection() {
     const handleAnimationComplete = () => {
@@ -39,11 +39,7 @@ export default function FirstSection() {
                 </p>
 
                 <div className="mt-4 flex justify-center sm:mt-6">
-                    <a className="inline-flex items-center gap-2 group rounded-xl bg-black px-5 py-3 text-yellow-300 transition-colors"
-                        href="#">
-                        <img src={ArrowRightCircleIcon} alt="arr" className="group-hover:rotate-45 transition-all" />
-                        Book Your Free Strategy Call
-                    </a>
+                    <AgencyButton title={"Book Your Free Strategy Call"} />
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import ArrowRightCircleIcon from "../../../../assets/arrow-right-circle.svg";
+import AgencyButton from "../Button";
 
 export default function ServiceSlider({ title, description, img }) {
   return (
@@ -9,11 +9,7 @@ export default function ServiceSlider({ title, description, img }) {
         <hr className="border-gray-500 my-2 md:my-12" />
         <small className="text-[#333333] md:text-base">{description}</small>
         <div className="mt-4 flex sm:mt-6">
-          <a className="inline-flex items-center gap-2 group rounded-xl bg-black px-5 py-3 text-yellow-300 transition-colors"
-              href="#">
-              <img src={ArrowRightCircleIcon} alt="arr" className="group-hover:rotate-45 transition-all" />
-              Join the waitlist
-          </a>
+          <AgencyButton title={"Join the waitlist"} />
         </div>
       </div>
 
