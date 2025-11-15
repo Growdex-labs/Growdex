@@ -3,12 +3,13 @@ import EngineSection from "../../../components/pages/agency/EngineSection";
 import FirstSection from "../../../components/pages/agency/FirstSection";
 import Header from "../../../components/pages/agency/Header";
 import OurPartners from "../../../components/pages/agency/OurPartners";
+import WhySection from "../../../components/pages/agency/WhySection";
 
 
 export default function AgencyPage() {
   return (
     <div className="font-gilroy-medium max-w-6xl lg:max-w-[1440px] mx-auto
-          bg-vector bg-center bg-contain relative min-h-screen">
+          bg-vector bg-center bg-contain relative min-h-screen text-[#333333]">
       <Header />
       <FirstSection />
       <br />
@@ -19,6 +20,7 @@ export default function AgencyPage() {
       </p>
       <br />
       <CoreServices />
+      <WhySection />
       <EngineSection />
       {/* last section */}
       <OurPartners />
