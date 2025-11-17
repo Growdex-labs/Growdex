@@ -1,8 +1,9 @@
 import CoreServices from "../../../components/pages/agency/core-services/CoreServices";
 import EngineSection from "../../../components/pages/agency/EngineSection";
 import FirstSection from "../../../components/pages/agency/FirstSection";
+import Footer from "../../../components/pages/agency/Footer";
 import Header from "../../../components/pages/agency/Header";
-import OurPartners from "../../../components/pages/agency/OurPartners";
+import ProcessSection from "../../../components/pages/agency/our-processes/ProcessSection";
 import TestimonialSection from "../../../components/pages/agency/testimonials/TestimonialSection";
 import WhySection from "../../../components/pages/agency/WhySection";
 import WhoWeWorkWithSection from "../../../components/pages/agency/work-with/WhoWeWorkWithSection";
@@ -22,12 +23,13 @@ export default function AgencyPage() {
       </p>
       <br />
       <CoreServices />
+      <ProcessSection />
       <WhoWeWorkWithSection />
       <WhySection />
       <TestimonialSection />
       <EngineSection />
       {/* last section */}
-      <OurPartners />
+      <Footer />
     </div>
   )
 }

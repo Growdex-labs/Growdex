@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { testimonials } from "../../../../data/testimonials";
 import TestimonialCard from "./TestimonialCard";
 import Tile from "./Tile";

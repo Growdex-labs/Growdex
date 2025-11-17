@@ -6,17 +6,17 @@ export const testimonials = [
   },
   {
     id: 2,
-    text: "Their team transformed our marketing pipeline completely",
-    person: "Tola A. Founder"
+    text: "Finally, an agency that actually understands performance marketing.",
+    person: "Daniel K., CEO"
   },
   {
     id: 3,
-    text: "We went from struggling to scaling — incredible experience",
-    person: "Tola A. Founder"
+    text: "Their clarity and speed is unmatched.",
+    person: "Chidera N., Head of Marketing"
   },
   {
     id: 4,
     text: "Their data-driven approach is unmatched in the industry",
-    person: "Tola A. Founder"
+    person: "Raymond C., Founder"
   }
 ];
