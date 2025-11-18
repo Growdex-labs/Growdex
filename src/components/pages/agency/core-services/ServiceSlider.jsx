@@ -17,7 +17,7 @@ export default function ServiceSlider({ title, description, img }) {
         <img
           src={img}
           alt="service-img"
-          className="w-full max-w-xs md:max-w-xl h-full object-contain lg:object-cover"
+          className="w-full max-w-xs md:max-w-xl md:h-[545px] object-contain lg:object-cover"
         />
       </div>
     </article>

@@ -5,7 +5,7 @@ import WorkWithCard from "./WorkWithCard"
 export default function WhoWeWorkWithSection() {
     const [activeWork, setActiveWork] = useState(1)
   return (
-    <section className="p-4 pb-20 backdrop-blur-3xl max-sm:pb-0">
+    <section className="p-4 py-20 md:py-24 backdrop-blur-3xl max-sm:pb-0">
         <div className="relative min-h-[745.7px] mx-auto w-full md:w-screen max-w-7xl
             flex justify-between gap-3">
             {/* block1 */}
