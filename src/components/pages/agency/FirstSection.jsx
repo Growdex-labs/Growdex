@@ -39,7 +39,10 @@ export default function FirstSection() {
                 </p>
 
                 <div className="mt-4 flex justify-center gap-3 sm:mt-6">
-                    <AgencyButton title={"Book Your Free Strategy Call"} />
+                    <AgencyButton
+                        title={"Book Your Free Strategy Call"}
+                        href='https://e55lt4kfwau.typeform.com/to/OkqxcDp4'
+                    />
                     <a href="#" target="_blank" rel="noopener noreferrer"
                         className='border border-black px-5 py-3 rounded-xl hover:bg-white'
                     >
@@ -48,11 +51,15 @@ export default function FirstSection() {
                 </div>
             </div>
         </div>
-            <div className="absolute left-10 top-1/5 -rotate-90 text-left w-fit font-gilroy-bold text-gray-600 hidden md:flex gap-1 animate-pulse">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#333333" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mouse-icon lucide-mouse rotate-90"><rect x="5" y="2" width="14" height="20" rx="7"/><path d="M12 6v4"/></svg>
-                <p>Scroll Down</p>
-            </div>
+
+        {/* scroll down info */}
+        <div className="absolute left-10 top-1/5 -rotate-90 text-left w-fit font-gilroy-bold text-gray-600 hidden md:flex gap-1 animate-pulse">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#333333" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mouse-icon lucide-mouse rotate-90"><rect x="5" y="2" width="14" height="20" rx="7"/><path d="M12 6v4"/></svg>
+            <p>Scroll Down</p>
+        </div>
+
         <div className="absolute top-[30%] right-0 w-full bg-radiant-ellipse bg-center -z-40 min-h-screen" />
+
         {/* cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1 md:gap-3
                         min-h-screen backdrop-blur-lg">
