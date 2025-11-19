@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import logo from "../../../assets/Frame 1686560934.png"
 import { Link } from 'react-router-dom'
-import hambugger from "../../../assets/menu hamburger (1).png"
 
 export default function Header() {
     const [scrolled, setScrolled] = useState(false)
