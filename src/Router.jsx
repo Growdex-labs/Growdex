@@ -48,14 +48,14 @@
 // //     <Route path="/cash-flow-dashboard" element={<CashflowDashboardPage />} />
 // //     <Route path="/reconcilations" element={<ReconcilationsPage />} />
 // //     <Route path="/chargeback-management" element={<ChargebackManagementPages />} /> */}
-    
-    
-    
+
+
+
 
 
 
 // //      {/* />
-   
+
 
 
 // //     <Route path="/contact" element={<ContactPage />} /> */}
@@ -133,12 +133,14 @@ import OnBoardingSteps from "./pages/Onboarding/Onboarding.jsx"
 import RedirectFlowGuard from "./redirectedRoutes/RedirectGlowGuard.jsx";
 import NotFoundPage from "./pages/Landing Page/NotFoundPage.jsx";
 import FlowProtectedRoute from "./redirectedRoutes/FlowProtectedRoute.jsx";
+import AgencyPage from "./pages/Landing Page/agency/Page.jsx";
 
 function Router() {
   return (
     <Routes>
       {/* Public routes */}
       <Route path="/" element={<LandingPage />} />
+      <Route path="/agency" element={<AgencyPage />} />
       <Route path="/blog" element={<GrowDexBlog />} />
       <Route path="/blog/:slug" element={<BlogDetail />} />
         <Route

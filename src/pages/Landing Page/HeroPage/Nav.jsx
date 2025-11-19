@@ -43,17 +43,17 @@
 // //   return (
 // //     <div className={`w-full z-50 flex justify-center ${scrolled ? 'sticky top-6' : ''}`}>
 // //       <div
-// //         className={`transition-all duration-300 flex items-center justify-between px-6 md:px-12 py-4 w-[95%] max-w-5xl 
+// //         className={`transition-all duration-300 flex items-center justify-between px-6 md:px-12 py-4 w-[95%] max-w-5xl
 // //         ${scrolled
 // //           ? 'bg-white/90 backdrop-blur-md shadow-md rounded-full'
 // //           : 'bg-transparent'}`
 // //         }
 // //       >
-      
+
 // //         <div className="flex justify-start gap-2">
 // //   <img src={logo} alt="" />
 // // <Link to="/">
-  
+
 // // <div className="text-lg md:text-xl font-bold text-gray-800">Growdex</div>
 // //     {/* <img src={Azonto_Logo} alt="Azonto Logo" className="w-44 h-auto" /> */}
 // //   </Link>
@@ -66,7 +66,7 @@
 // //         <a href="#waitlist-banner">
 // //         <button className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium">
 // //           Join Waitlist
-          
+
 // //         </button>
 // //         </a>
 // //       </div>
@@ -99,7 +99,7 @@
 // //   return (
 // //     <div className={`w-full z-50 flex justify-center ${scrolled ? 'sticky top-6' : ''}`}>
 // //       <div
-// //         className={`transition-all duration-300 flex items-center justify-between px-6 md:px-12 py-4 w-[95%] max-w-5xl 
+// //         className={`transition-all duration-300 flex items-center justify-between px-6 md:px-12 py-4 w-[95%] max-w-5xl
 // //         ${scrolled
 // //           ? 'bg-white/90 backdrop-blur-md shadow-md rounded-full'
 // //           : 'bg-transparent'}`}
@@ -219,7 +219,7 @@
 // <div className={`w-full z-50 flex justify-center ${scrolled && !isOpen ? 'sticky top-6' : ''}`}>
 
 //       <div
-//         className={`transition-all duration-300 flex items-center justify-between px-6 md:px-12 py-4 w-[95%] max-w-5xl 
+//         className={`transition-all duration-300 flex items-center justify-between px-6 md:px-12 py-4 w-[95%] max-w-5xl
 //           ${scrolled
 //             ? 'bg-white/90 backdrop-blur-md shadow-md rounded-full'
 //             : 'bg-transparent'}`}
@@ -231,7 +231,7 @@
 //           </Link>
 //         </div>
 
-        
+
 
 //         {/* Desktop nav links */}
 //         <div className="hidden md:flex space-x-8 text-gray-600 font-medium text-sm">
@@ -344,7 +344,7 @@ const Nav = () => {
 <div className={`w-full z-50 flex justify-center ${scrolled && !isOpen ? 'sticky top-6' : ''}`}>
 
       <div
-        className={`transition-all duration-300 flex items-center justify-between px-6 md:px-12 py-4 w-[95%] max-w-5xl 
+        className={`transition-all duration-300 flex items-center justify-between px-6 md:px-12 py-4 w-[95%] max-w-5xl
           ${scrolled
             ? 'bg-white/90 backdrop-blur-md shadow-md rounded-full'
             : 'bg-transparent'}`}
@@ -364,6 +364,7 @@ const Nav = () => {
     <a href='#' to="/integration" className="hover:text-black transition">Integration</a>
     <a href='#' to="/pricing" className="hover:text-black transition">Pricing</a >
     <Link to="/blog" className="hover:text-black transition">Blog</Link>
+    <Link to="/agency" className="hover:text-black transition">Agency</Link>
   </div>
 
   {/* Right: Join Waitlist + Hamburger */}
@@ -416,11 +417,12 @@ const Nav = () => {
           </div>
 
           {/* Menu links centered vertically */}
-          <nav className="flex flex-col justify-start mt-24 items-center space-y-10 text-2xl font-semibold text-gray-800 flex-grow">
+          <nav className="flex flex-col justify-start mt-6 items-center space-y-10 text-2xl font-semibold text-gray-800 flex-grow">
             <a href="#" onClick={() => setIsOpen(false)}>How It Works</a>
             <a href="#" onClick={() => setIsOpen(false)}>Integrations</a>
             <a href="#" onClick={() => setIsOpen(false)}>Pricing</a>
             <Link to="/blog" className="hover:text-black transition">Blog</Link>
+            <Link to="/agency" className="hover:text-black transition">Agency</Link>
           </nav>
 
           {/* Footer */}
