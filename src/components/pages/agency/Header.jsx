@@ -3,40 +3,39 @@ import logo from "../../../assets/Frame 1686560934.png"
 import { Link } from 'react-router-dom'
 
 export default function Header() {
-    const [scrolled, setScrolled] = useState(false)
-      const [isOpen, setIsOpen] = useState(false)
       const [isMenu, setIsMenu] = useState(false)
+      const [isScrolled, setIsScrolled] = useState(false);
 
       useEffect(() => {
+        let ticking = false;
+
         const handleScroll = () => {
-          setScrolled(window.scrollY > 10)
-        }
+          const scrollTop = window.scrollY;
 
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-      }, [])
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              setIsScrolled(scrollTop > 50);
+              ticking = false;
+            });
+            ticking = true;
+          }
+        };
 
-      // Lock body scroll when menu is open
-      useEffect(() => {
-        if (isOpen) {
-          document.body.style.overflow = 'hidden'
-        } else {
-          document.body.style.overflow = ''
-        }
+        window.addEventListener("scroll", handleScroll, { passive: true });
 
         return () => {
-          document.body.style.overflow = ''
-        }
-      }, [isOpen])
+          window.removeEventListener("scroll", handleScroll);
+        };
+      }, []);
 
       return (
-    <div className={`w-full z-50 flex justify-center ${scrolled && !isOpen ? 'sticky top-6' : 'mt-8'}`}>
+    <header className="w-full z-50 flex justify-center sticky top-6 mt-8" id='header'>
 
-          <div
-            className={`transition-all duration-300 flex items-center justify-between px-6 md:px-12 py-4 w-[95%]
-              ${scrolled
-                ? 'bg-white/50 backdrop-blur-md shadow-md rounded-full'
-                : 'bg-transparent'}`}
+          <section
+            className={`
+              transition-all duration-300 flex items-center justify-between px-6 md:px-12 py-4 w-[95%]
+              ${isScrolled ? "bg-white/50 backdrop-blur-md shadow-md rounded-full" : ""}
+            `}
           >
             <div className="flex items-center justify-between gap-4 px-4 md:px-0 w-full max-w-5xl mx-auto md:max-w-none">
                 {/* Left: Logo */}
@@ -117,7 +116,7 @@ export default function Header() {
                 </div>
 
             </div>
-        </div>
-    </div>
+        </section>
+    </header>
   )
 }

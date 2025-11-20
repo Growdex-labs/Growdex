@@ -1,14 +1,12 @@
 import 'animate.css';
+import useScrollParallax from '../../hooks/useScrollParallax';
 import PerfStrategyImg from "../../../assets/perf-strategy.png";
 import MultiPlatformImg from "../../../assets/multi-platform.png";
 import OptimizeCampaignImg from "../../../assets/optimize-campaign.png";
-import SplitText from '../../ui/SplitText';
 import AgencyButton from './Button';
 
 export default function FirstSection() {
-    const handleAnimationComplete = () => {
-        console.log('All letters have animated!');
-    };
+    const offset = useScrollParallax();
   return (
     <section className="lg:grid lg:min-h-screen lg:place-content-center relative mb-3 md:mb-10">
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
@@ -50,20 +48,77 @@ export default function FirstSection() {
             <p>Scroll Down</p>
         </div>
 
-        <div className="absolute top-[30%] max-lg:top-[10%] right-0 w-full bg-radiant-ellipse
+        <div className="absolute top-[30%] max-sm:top-[30%] max-lg:top-[10%] right-0 w-full bg-radiant-ellipse
                 bg-center -z-40 min-h-screen" />
 
         {/* cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1 md:gap-3
-                        xl:min-h-screen backdrop-blur-lg">
-            <div className="w-full h-[350px] md:h-[550px] lg:h-[600px] rounded-lg md:mt-28 lg:mt-36 px-4 md:px-0">
-                <img src={PerfStrategyImg} alt="img1" />
+        <div
+            className="
+            grid grid-cols-1
+            sm:grid-cols-2
+            md:grid-cols-3
+            gap-4 md:gap-6
+            xl:min-h-screen
+            px-4 md:px-0
+            "
+        >
+            {/* CARD 1 */}
+            <div
+            className="
+                w-full rounded-lg overflow-hidden
+                h-[320px] sm:h-[400px] md:h-[520px] lg:h-[580px]
+                md:mt-28 lg:mt-36
+            "
+            style={{
+                transform: `translateY(${
+                window.innerWidth < 768
+                    ? -(offset * 0.05)   // mobile gentle parallax
+                    : -(offset * 0.15)   // desktop lift
+                }px)`,
+                transition: "transform 0.3s ease-out",
+                willChange: "transform"
+            }}
+            >
+            <img src={PerfStrategyImg} alt="img1" className="w-full h-full object-cover" />
             </div>
-            <div className="w-full h-[350px] md:h-[550px] lg:h-[600px] rounded-lg">
-                <img src={MultiPlatformImg} alt="img2" />
+
+            {/* CARD 2 */}
+            <div
+            className="
+                w-full rounded-lg overflow-hidden
+                h-[320px] sm:h-[400px] md:h-[520px] lg:h-[580px]
+            "
+            style={{
+                transform: `translateY(${
+                window.innerWidth < 768
+                    ? -(offset * 0.03)   // subtle on mobile
+                    : offset * 0.15       // down on desktop
+                }px)`,
+                transition: "transform 0.3s ease-out",
+                willChange: "transform"
+            }}
+            >
+            <img src={MultiPlatformImg} alt="img2" className="w-full h-full object-cover" />
             </div>
-            <div className="w-full h-[350px] md:h-[550px] lg:h-[600px] rounded-lg md:mt-28 lg:mt-36">
-                <img src={OptimizeCampaignImg} alt="img3" />
+
+            {/* CARD 3 */}
+            <div
+            className="
+                w-full rounded-lg overflow-hidden
+                h-[320px] sm:h-[400px] md:h-[520px] lg:h-[580px]
+                md:mt-28 lg:mt-36
+            "
+            style={{
+                transform: `translateY(${
+                window.innerWidth < 768
+                    ? -(offset * 0.07)   // strongest mobile parallax
+                    : -(offset * 0.15)   // up on desktop
+                }px)`,
+                transition: "transform 0.3s ease-out",
+                willChange: "transform"
+            }}
+            >
+            <img src={OptimizeCampaignImg} alt="img3" className="w-full h-full object-cover" />
             </div>
         </div>
     </section>
