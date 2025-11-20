@@ -6,7 +6,7 @@ export default function WhoWeWorkWithSection() {
     const [activeWork, setActiveWork] = useState(1)
   return (
     <section className="p-4 py-20 md:py-24 backdrop-blur-3xl max-sm:pb-0 max-sm:mb-12">
-        <div className="relative h-[350px] md:min-h-[745.7px] mx-auto w-full md:w-screen max-w-7xl
+        <div className="relative h-[350px] md:min-h-[745.7px] mx-auto w-full max-w-7xl
             flex justify-between gap-3">
             {/* block1 */}
             <div className="min-h-full flex flex-col justify-between">
@@ -15,7 +15,7 @@ export default function WhoWeWorkWithSection() {
                     Who we
                     <p>work with</p>
                 </h2>
-                <div className="space-y-4 py-4 font-gilroy-regular md:mb-16">
+                <div className="md:max-lg:hidden space-y-4 py-4 font-gilroy-regular md:mb-16">
                     {worksWith.map((item, index) => (
                         <div
                         key={index}

@@ -35,12 +35,12 @@ export default function WorkWithCard({
         onMouseEnter={() => isDesktop && setActiveWork(id)}
         onMouseLeave={() => isDesktop && setActiveWork(activeWork)} // keep clicked state
         className={`
-            relative w-56 md:w-[420px] h-40 md:h-auto rounded-xl
+            relative w-56 md:w-full lg:w-[420px] h-40 md:h-auto rounded-xl
             bg-cover bg-center font-gilroy-semibold pl-4 pb-4
             flex flex-col justify-end group transition-transform duration-300
 
-            ${isActive ? "scale-x-110" : ""}
-            ${isNextInRow || isPrevInRow ? "scale-x-90" : ""}
+            ${isActive ? "w-full lg:scale-x-105" : ""}
+            ${isNextInRow || isPrevInRow ? "w-[85%]" : ""}
         `}
         style={{ backgroundImage: `url(${url})` }}
     >

@@ -24,12 +24,12 @@ export default function WhySection() {
     ];
   return (
     <section className="p-0 md:p-6 lg:p-8 backdrop-blur-3xl max-sm:pb-0" id="why">
-        <div className="relative mx-auto w-full md:w-screen max-w-7xl px-4">
+        <div className="relative mx-auto w-full max-w-7xl px-4">
             <h4 className="text-2xl md:text-4xl lg:text-6xl xl:text-7xl tracking-tight text-center">
                 Why Brands Choose Us
             </h4>
             <div className="my-9 lg:mt-19 w-full py-8 md:px-6 md:py-12 bg-[#FFE95C26] rounded-xl">
-                <div className="flex flex-col md:flex-row items-center gap-12 md:justify-evenly
+                <div className="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap items-center gap-12 md:justify-evenly
                                 font-gilroy-semibold text-sm md:text-base">
                     {whyChooseUs.map((why, index) => (
                         <div key={index}

@@ -5,7 +5,7 @@ import AgencyButton from "./Button";
 export default function EngineSection() {
   return (
     <section className="p-4 md:p-6 lg:p-8 backdrop-blur-3xl max-sm:pb-0">
-        <div className="relative mx-auto w-full md:w-screen max-w-7xl px-4
+        <div className="relative mx-auto w-full max-w-7xl px-4
                         flex flex-col gap-3 items-center">
             <div className="relative z-0">
                 <img src={LikesImg} alt="likes-img" className="relative z-10" />
