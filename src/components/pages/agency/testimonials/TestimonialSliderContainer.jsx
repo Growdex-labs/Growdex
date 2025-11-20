@@ -34,7 +34,7 @@ export default function TestimonialSliderContainer() {
   };
 
   return (
-    <div className="w-full h-auto flex flex-col md:flex-row justify-between items-center relative">
+    <div className="w-full h-auto flex flex-col gap-4 md:flex-row md:justify-between md:items-center relative">
 
       {/* LEFT STATIC PANEL */}
       <div className="flex flex-col gap-6">
@@ -46,17 +46,17 @@ export default function TestimonialSliderContainer() {
         </div>
 
         {/* Navigation */}
-        <div className="flex gap-6 text-3xl">
+        <div className="hidden md:flex gap-6 text-3xl">
             <ArrowLeftCircle onClick={prev} size={28} className="cursor-pointer"/>
             <ArrowRightCircle onClick={next} size={28} className="cursor-pointer"/>
         </div>
       </div>
 
       {/* VERTICAL LINE */}
-      <div className="w-full md:w-0 h-[1px] md:h-[375px] border border-gray-100 mx-4"/>
+      <div className="w-full md:w-0 h-[1px] md:h-[375px] border border-gray-100 md:mx-4"/>
 
       {/* CENTER EXPANDED CARD (ANIMATED) */}
-      <div className="relative flex-1 flex justify-center">
+      <div className="relative flex-1 flex flex-col md:justify-center">
         <div
           className={`
             transition-all duration-700
@@ -70,6 +70,12 @@ export default function TestimonialSliderContainer() {
             <div className="w-4 h-4 rounded-full bg-gray-300"></div>
             <p className="tracking-tight font-gilroy-light">{testimonials[index].person}</p>
           </div>
+        </div>
+
+        {/* Mobile Navigation */}
+        <div className="flex md:hidden gap-6 justify-end text-3xl mt-1">
+            <ArrowLeftCircle onClick={prev} size={28} className="cursor-pointer"/>
+            <ArrowRightCircle onClick={next} size={28} className="cursor-pointer"/>
         </div>
       </div>
 

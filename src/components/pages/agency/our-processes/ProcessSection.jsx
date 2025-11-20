@@ -54,9 +54,10 @@ export default function ProcessSection() {
 
   return (
     <section className="p-4 md:pb-16 lg:pb-32 backdrop-blur-3xl max-sm:pb-0">
-        <div className="relative mx-auto w-full md:w-screen max-w-7xl">
-          <div className="w-full flex justify-between bg-[#333333] text-white rounded-t-xl
-                          px-4 md:px-8 pt-8 md:pt-12 font-gilroy-regular ellipse806"
+        <div className="relative mx-auto w-full md:w-full max-w-7xl">
+          <div className="w-full flex flex-col md:flex-row gap-3 md:justify-between bg-[#333333]
+          text-white rounded-t-xl px-4 md:px-8 py-8 md:pt-12 font-gilroy-regular ellipse806
+          max-sm:min-h-screen"
           >
             {/* first block */}
             <div className="relative max-w-6xl w-full">
@@ -66,7 +67,7 @@ export default function ProcessSection() {
                   <p className="mt-2 md:mt-4">Process</p>
               </h2>
               {/* Scrollable Timeline */}
-              <div className="mt-12 p-4 max-w-lg">
+              <div className="hidden md:block mt-12 p-4 max-w-lg">
                 {/* scroll container */}
                 <div
                   ref={(el) => {
@@ -74,7 +75,7 @@ export default function ProcessSection() {
                     containerMeasureRef(el);
                   }}
                   className="relative w-full max-h-[500px] overflow-x-visible overflow-y-auto
-                                p-3 md:px-12 z-0 hide-scrollbar">
+                                p-3 lg:px-12 z-0 hide-scrollbar">
                   {agencyProcesses.map((pro, index) => {
                     const isActive = index === activeProcess;
                     return (
@@ -82,7 +83,7 @@ export default function ProcessSection() {
                       key={index}
                       ref={(el) => (refs.current[index] = el)}
                       layout
-                      className={`relative flex flex-col items-end border-0 border-l py-8 z-0
+                      className={`relative w-full flex flex-col items-end border-0 border-l py-8 z-0
                                 ${isActive ? "border-[#AD9D37]" : "border-gray-600"}`}
                       // initial={{ opacity: 0.5, y: 20 }}
                       animate={{
@@ -96,7 +97,7 @@ export default function ProcessSection() {
                       {isActive && (
                         <motion.div
                           layout // ensures it moves smoothly when its container changes
-                          className="absolute -left-11 top-1/2 -translate-y-1/2 w-22 h-22
+                          className="absolute md:hidden lg:block -left-11 top-1/2 -translate-y-1/2 w-10 h-10 xl:w-22 xl:h-22
                                     z-20 glow-circle backdrop-blur-xl"
                           animate={{
                             opacity: isActive ? 1 : 0,

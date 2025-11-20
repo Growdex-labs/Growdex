@@ -48,9 +48,9 @@ export default function ServiceSliderContainer() {
   };
 
   return (
-    <div className="w-full space-y-12">
+    <div className="w-full space-y-12 overflow-hidden">
       {/* ------------------- TOP NAV BAR ------------------- */}
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-6 overflow-x-auto">
 
         {agencyServices.map((service, i) => {
           const active = i === index;
@@ -58,11 +58,11 @@ export default function ServiceSliderContainer() {
           return (
             <div
               key={service.id}
-              className="relative cursor-pointer select-none"
+              className="relative w-full cursor-pointer select-none"
               onClick={() => goTo(i)}
             >
               {active ? (
-                <div className="flex items-start gap-2">
+                <div className="flex items-start gap-2 overflow-x-auto">
                     <div className="relative w-full md:w-64">
                         {/* badge */}
                         <div className="absolute -top-6 md:-top-12 left-0 w-4 h-4 md:w-10 md:h-10 bg-yellow-300 rounded-full flex items-center justify-center max-sm:text-xs font-normal md:font-bold text-black shadow-md z-10">
@@ -77,10 +77,12 @@ export default function ServiceSliderContainer() {
                             />
                         </div>
                     </div>
-                    <span className="max-sm:hidden text-gray-300 whitespace-nowrap">{service.title}</span>
+                    <span className="max-sm:hidden text-gray-300 whitespace-nowrap">
+                      {service.title}
+                    </span>
                 </div>
               ) : (
-                <div className="w-8 md:w-28 lg:w-38 h-6 bg-gray-300 rounded-full opacity-60" />
+                <div className="w-8 md:w-28 lg:w-32 h-6 bg-gray-300 rounded-full opacity-60" />
               )}
             </div>
           );
