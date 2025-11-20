@@ -14,28 +14,18 @@ export default function FirstSection() {
         <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
             <div className="mx-auto max-w-[90ch] text-center">
                 <h1 className="text-3xl font-semibold text-gray-900 sm:text-6xl animate__animated animate__fadeInDown">
-                    <div className="flex gap-2 md:gap-4 justify-center items-center whitespace-nowrap">Unified Ad <p className="w-24 lg:w-48 h-12 md:h-22 bg-gray-300 rounded-xl animate__animated animate__rubberBand animate__delay-2s"></p> creation</div>
-                    at <strong className="text-yellow-300">your fingertips</strong>
+                    <div className="flex gap-2 md:gap-4 justify-center items-center whitespace-nowrap">
+                        Scaling
+                        <p className="p-4 bg-gray-300 rounded-xl animate__animated animate__rubberBand animate__delay-2s">Brands</p> With</div>
+                    Results-Driven <strong className="text-yellow-300">Performance Marketing.</strong>
                 </h1>
 
                 <p className="mt-4 text-base text-pretty text-gray-700 sm:text-lg/relaxed">
                     {/* <p className="text-lg sm:text-xl/relaxed">We don't just run ads.</p> */}
-                    <SplitText
-                        text="We don't just run ads."
-                        className="text-lg sm:text-xl/relaxed"
-                        delay={100}
-                        duration={0.3}
-                        ease="power3.out"
-                        splitType="chars"
-                        from={{ opacity: 0, y: 40 }}
-                        to={{ opacity: 1, y: 0 }}
-                        threshold={0.1}
-                        rootMargin="-100px"
-                        textAlign="center"
-                        onLetterAnimationComplete={handleAnimationComplete}
-                    />
-                    <br />
-                    <p className='max-w-[55ch] mx-auto'>We build and manage marketing systems that perform-so your brand can scale faster with less guesswork.</p>
+                    <p className='max-w-[55ch] mx-auto'>
+                        We help ambitious brands scale with paid media, strategy, creative, and
+                        data-driven execution.
+                    </p>
                 </p>
 
                 <div className="mt-4 flex flex-col md:flex-row justify-center gap-3 sm:mt-6">

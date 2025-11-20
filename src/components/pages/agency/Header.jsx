@@ -51,30 +51,71 @@ export default function Header() {
 
 
                 {/* Right: Menu + Hamburger */}
-                <div className={`flex items-center gap-4 rounded-lg
-                    ${isMenu ? 'bg-yellow-400' : ''} transition-colors delay-300`}>
+                <div className={`flex items-center gap-4 rounded-lg transition-colors duration-300
+                    ${isMenu ? 'bg-[#FFE95C]' : ''}`}>
+
+                    {/* Desktop Menu */}
                     <div className={`
                         hidden md:flex items-center gap-8 text-gray-700 py-2 px-3 rounded-lg
-                        transition-all duration-300 delay-300 origin-right
-                        ${isMenu ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}`}>
+                        transition-all duration-300 ease-out origin-right whitespace-nowrap
+                        ${isMenu
+                            ? 'opacity-100 scale-100 max-w-[500px]'
+                            : 'opacity-0 scale-95 max-w-0 pointer-events-none'
+                        }`}
+                        style={{ overflow: "hidden" }}
+                    >
                         <a href='#why' className="hover:text-black transition">Why Growdex?</a>
                         <a href='#services' className="hover:text-black transition">Core Services</a>
                         <a href='#impact' className="hover:text-black transition">Our Impact</a>
                         <a href='https://e55lt4kfwau.typeform.com/to/i41nq0ec' target='_blank' className="hover:text-black transition">Get Started</a>
                     </div>
-                    {/* Open menu list */}
-                    <button className={`hidden
-                        ${isMenu ? 'bg-yellow-400 text-black' : 'bg-neutral-900 text-white'}
-                        px-3 md:px-6 py-2 md:py-3 rounded-lg md:rounded-xl text-sm font-gilroy-medium whitespace-nowrap md:flex justify-center items-center gap-1 cursor-pointer transition-colors`} onClick={() => setIsMenu(!isMenu)}>
-                        <span className={`${isMenu ? 'opacity-0 scale-0' : 'opacity-100 scale-100'} transition-all`}>Menu</span>
-                        {/*hamburger -> morph to X */}
+
+                    {/* Open menu list button */}
+                    <button
+                        className={`hidden
+                            ${isMenu ? 'bg-[#FFE95C] text-black' : 'bg-neutral-900 text-white'}
+                            px-3 md:px-6 py-2 md:py-3 rounded-lg md:rounded-xl text-sm font-gilroy-medium
+                            whitespace-nowrap md:flex justify-center items-center gap-1 cursor-pointer
+                            transition-colors duration-300`}
+                        onClick={() => setIsMenu(!isMenu)}
+                    >
+                        <span className={`${isMenu ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}
+                            transition-all duration-300 ease-out`}>
+                            Menu
+                        </span>
+
+                        {/* Hamburger → X */}
                         <div className='relative ml-2 w-4 h-3 flex items-center justify-center'>
-                            <span className={`absolute w-3 h-[1px] transform transition-all duration-300 origin-center ${isMenu ? 'rotate-45 bg-black' : '-translate-y-1 bg-[#D9D9D9]'}`}></span>
-                            <span className={`absolute w-3 h-[1px] bg-[#D9D9D9] transform transition-all duration-300 origin-center ${isMenu ? 'opacity-0 scale-0' : 'opacity-100 scale-100'}`}></span>
-                            <span className={`absolute w-3 h-[1px] transform transition-all duration-300 origin-center ${isMenu ? '-rotate-45 bg-black' : 'translate-y-1 bg-[#D9D9D9]'}`}></span>
+
+                            {/* Top line */}
+                            <span className={`
+                                absolute w-3 h-[1px] transition-all duration-300 ease-out origin-center
+                                ${isMenu
+                                    ? 'rotate-45 bg-black'
+                                    : '-translate-y-1 bg-[#D9D9D9]'
+                                }`}>
+                            </span>
+
+                            {/* Middle line */}
+                            <span className={`
+                                absolute w-3 h-[1px] bg-[#D9D9D9] transition-all duration-300 origin-center
+                                ${isMenu ? 'opacity-0 scale-0' : 'opacity-100 scale-100'}
+                            `}></span>
+
+                            {/* Bottom line */}
+                            <span className={`
+                                absolute w-3 h-[1px] transition-all duration-300 ease-out origin-center
+                                ${isMenu
+                                    ? '-rotate-45 bg-black'
+                                    : 'translate-y-1 bg-[#D9D9D9]'
+                                }`}>
+                            </span>
+
                         </div>
                     </button>
+
                 </div>
+
             </div>
         </div>
     </div>
