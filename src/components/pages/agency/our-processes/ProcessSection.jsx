@@ -55,8 +55,8 @@ export default function ProcessSection() {
   return (
     <section className="p-4 md:pb-16 lg:pb-32 backdrop-blur-3xl max-sm:pb-0">
         <div className="relative mx-auto w-full md:w-screen max-w-7xl">
-          <div className="w-full flex justify-between bg-[#333333] text-white rounded-t-xl
-                          px-4 md:px-8 pt-8 md:pt-12 font-gilroy-regular ellipse806"
+          <div className="w-full flex flex-col md:flex-row gap-3 md:justify-between bg-[#333333]
+          text-white rounded-t-xl px-4 md:px-8 py-8 md:pt-12 font-gilroy-regular ellipse806"
           >
             {/* first block */}
             <div className="relative max-w-6xl w-full">
@@ -66,7 +66,7 @@ export default function ProcessSection() {
                   <p className="mt-2 md:mt-4">Process</p>
               </h2>
               {/* Scrollable Timeline */}
-              <div className="mt-12 p-4 max-w-lg">
+              <div className="hidden md:block mt-12 p-4 max-w-lg">
                 {/* scroll container */}
                 <div
                   ref={(el) => {

@@ -12,12 +12,12 @@ export default function TestimonialCard({ text }) {
         flex
         items-center
         justify-center
-        text-3xl
+        md:text-3xl text-xl
         font-light
         leading-snug
       "
     >
-      “ {text} ”
+      “{text}”
     </div>
   );
 }

@@ -486,7 +486,6 @@ input[type="number"] {
     rgba(0, 0, 0, 1) 60%,
     rgba(0, 0, 0, 0.75) 75%,
     rgba(0, 0, 0, 0.25) 90%,
-    rgba(0, 0, 0, 0) 100%
   );
   mask-size: 100% 100%;
   backdrop-filter: blur(4px);
@@ -518,7 +517,6 @@ input[type="number"] {
       rgba(0,0,0,1) 55%,
       rgba(0,0,0,0.8) 70%,
       rgba(0,0,0,0.25) 88%,
-      rgba(0,0,0,0) 100%
     );
   }
 }
@@ -534,7 +532,6 @@ input[type="number"] {
       rgba(0,0,0,1) 55%,
       rgba(0,0,0,0.9) 67%,
       rgba(0,0,0,0.25) 82%,
-      rgba(0,0,0,0) 100%
     );
   }
 }

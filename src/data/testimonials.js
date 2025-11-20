@@ -17,6 +17,6 @@ export const testimonials = [
   {
     id: 4,
     text: "Their data-driven approach is unmatched in the industry",
-    person: "Raymond C., Founder"
+    person: "Gabriel C., Founder"
   }
 ];

@@ -38,12 +38,13 @@ export default function FirstSection() {
                     <p className='max-w-[55ch] mx-auto'>We build and manage marketing systems that perform-so your brand can scale faster with less guesswork.</p>
                 </p>
 
-                <div className="mt-4 flex justify-center gap-3 sm:mt-6">
+                <div className="mt-4 flex flex-col md:flex-row justify-center gap-3 sm:mt-6">
                     <AgencyButton
                         title={"Book Your Free Strategy Call"}
                         href='https://e55lt4kfwau.typeform.com/to/OkqxcDp4'
                     />
-                    <a href="#" target="_blank" rel="noopener noreferrer"
+                    <a href="https://e55lt4kfwau.typeform.com/to/i41nq0ec" target="_blank"
+                        rel="noopener noreferrer"
                         className='border border-black px-5 py-3 rounded-xl hover:bg-white'
                     >
                         Let's work together

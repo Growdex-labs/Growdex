@@ -35,7 +35,7 @@ export default function Header() {
           <div
             className={`transition-all duration-300 flex items-center justify-between px-6 md:px-12 py-4 w-[95%]
               ${scrolled
-                ? 'bg-white/90 backdrop-blur-md shadow-md rounded-full'
+                ? 'bg-white/50 backdrop-blur-md shadow-md rounded-full'
                 : 'bg-transparent'}`}
           >
             <div className="flex items-center justify-between gap-4 px-4 md:px-0 w-full max-w-5xl mx-auto md:max-w-none">
@@ -60,7 +60,7 @@ export default function Header() {
                         <a href='#why' className="hover:text-black transition">Why Growdex?</a>
                         <a href='#services' className="hover:text-black transition">Core Services</a>
                         <a href='#impact' className="hover:text-black transition">Our Impact</a>
-                        <a href='#clientele' className="hover:text-black transition">Clientele</a>
+                        <a href='https://e55lt4kfwau.typeform.com/to/i41nq0ec' target='_blank' className="hover:text-black transition">Get Started</a>
                     </div>
                     {/* Open menu list */}
                     <button className={`hidden
