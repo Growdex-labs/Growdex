@@ -31,6 +31,11 @@ const JoinWaitlist = ({ placeholder = "Enter your email" }) => {
       await axios.post(`${apiUrl}/api/join-waitlist`, {
         email,
         firstName,
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': import.meta.env.VITE_WAITLIST_KEY,
+        },
       })
       setSuccess("🎉 You've joined the waitlist!")
       setEmail("")

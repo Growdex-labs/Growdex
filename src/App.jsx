@@ -1,118 +1,20 @@
-// // import React, { useEffect, useState } from "react";
-// // import AppRouter from "./Router.jsx";
-// // import { Toaster } from "react-hot-toast";
-// // import Loader from "./components/loader/Loader.jsx";
-// // import { bootstrapAuth } from "./utils/bootstrapAuth.js";
-
-// // function App() {
-// //   const [loading, setLoading] = useState(true);
-
-// //   useEffect(() => {
-// //     bootstrapAuth().finally(() => {
-// //       console.log("Hiding loader now");
-// //       setLoading(false);
-// //     });
-// //   }, []);
-  
-
-// //   if (loading) return <Loader/>;
-
-// //   return (
-// //     <div>
-// //       <AppRouter />
-
-  
-// //       <Toaster
-// //         position="top-right"
-// //         toastOptions={{
-// //           success: {
-// //             style: {
-// //               background: "#16a34a", // green
-// //               color: "#fff",
-// //             },
-// //           },
-// //           error: {
-// //             style: {
-// //               background: "#dc2626", // red
-// //               color: "#fff",
-// //             },
-// //           },
-// //         }}
-// //       />
-// //     </div>
-// //   );
-// // }
-
-// // export default App;
-
-
-// import React, { useEffect, useState } from "react";
-// import AppRouter from "./Router.jsx";
-// import { Toaster } from "react-hot-toast";
-// import Loader from "./components/loader/Loader.jsx";
-// import { bootstrapAuth } from "./utils/bootstrapAuth.js";
-
-// function App() {
-//   const [authChecked, setAuthChecked] = useState(false);
-
-//   useEffect(() => {
-//     // run bootstrap in background
-//     bootstrapAuth().finally(() => {
-//       console.log("Auth bootstrap finished");
-//       setAuthChecked(true); // optional: for pages that need auth
-//     });
-//   }, []);
-
-//   // render app immediately; only show loader if you really need to block auth-required pages
-//   return (
-//     <div>
-//       <AppRouter />
-//       <Toaster
-//         position="top-right"
-//         toastOptions={{
-//           success: { style: { background: "#16a34a", color: "#fff" } },
-//           error: { style: { background: "#dc2626", color: "#fff" } },
-//         }}
-//       />
-//     </div>
-//   );
-// }
-
-// export default App;
-
-import React from "react";
-import AppRouter from "./Router.jsx";
-import { Toaster } from "react-hot-toast";
-import { useAuthStore } from "./pages/store/authStore.jsx";
-import Loader from "./components/loader/Loader.jsx";
-import { useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+import LandingPage from "./pages/Landing Page/HeroPage/index.jsx";
+import BlogDetail from "./components/pages/Blogs/BlogDetail.jsx";
+import GrowDexBlog from "./components/pages/Blogs/GrowdexBlog.jsx";
+import NotFoundPage from "./pages/Landing Page/NotFoundPage.jsx";
+import AgencyPage from "./pages/Landing Page/agency/Page.jsx";
 
 function App() {
-    const { isCheckingAuth, checkAuth } = useAuthStore();
-
-  useEffect(() => {
-    checkAuth();
-  }, [checkAuth]);
-
-   const isLoading = isCheckingAuth 
   return (
-    <>
-    
-      {isLoading ? (
-        <Loader />
-      ) : (
-    <div>
-      <AppRouter />
-      <Toaster
-        position="top-right"
-        toastOptions={{
-          success: { style: { background: "#16a34a", color: "#fff" } },
-          error: { style: { background: "#dc2626", color: "#fff" } },
-        }}
-      />
-    </div>
-      )}
-      </>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/agency" element={<AgencyPage />} />
+      <Route path="/blog" element={<GrowDexBlog />} />
+      <Route path="/blog/:slug" element={<BlogDetail />} />
+
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   );
 }
 
