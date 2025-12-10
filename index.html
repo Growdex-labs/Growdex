@@ -45,14 +45,25 @@
     </div>
     <div id="root"></div>
     <script>
-      // Remove preloader once DOMContentLoaded fires
-      document.addEventListener("DOMContentLoaded", () => {
+      // Function to remove preloader
+      function removePreloader() {
         const preloader = document.getElementById("preloader");
         if (preloader) {
           preloader.style.opacity = "0";
           setTimeout(() => preloader.remove(), 300); // fade out
         }
+      }
+
+      // Expose globally so React can call it
+      window.removePreloader = removePreloader;
+
+      // Fallback: remove after window.load (all resources loaded)
+      window.addEventListener("load", () => {
+        setTimeout(removePreloader, 100);
       });
+
+      // Safety fallback: remove after 5 seconds no matter what
+      setTimeout(removePreloader, 5000);
     </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
