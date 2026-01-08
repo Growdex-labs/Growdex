@@ -1,153 +1,160 @@
-import Dashboard1 from "../../../assets/Dashboard Overview (2).png"
-import Dashboard from "../../../assets/Frame.png"
-import Eclipse1 from "../../../assets/Ellipse 18.png"
-import Eclipse2 from "../../../assets/Ellipse 19.png"
-import Eclipse3 from "../../../assets/Ellipse 20.png"
-import Eclipse4 from "../../../assets/Ellipse 21.png"
-import Eclipse5 from "../../../assets/Ellipse 22.png"
-import arrowVector from "../../../assets/Vector (8).png"
-import { useState } from "react"
-import axios from "axios"
+import Dashboard1 from "../../../assets/Dashboard Overview (2).png";
+import Dashboard from "../../../assets/Frame.png";
+import Rectangle from "../../../assets/rectangle.png";
+import Dashboard2 from "../../../assets/dashboard-preview.png";
 
-export default function HeroSection({ placeholder = "Enter your email" }) {
-  const [email, setEmail] = useState("")
-  const [firstName, setFirstName] = useState("")
-  const [loading, setLoading] = useState(false)
-  const [success, setSuccess] = useState("")
-  const [error, setError] = useState("")
+import GoogleIcon from "../../../assets/devicon_google.png";
+import InstagramIcon from "../../../assets/mingcute_instagram-fill.png";
+import FacebookIcon from "../../../assets/logos_facebook.png";
+import TwitterIcon from "../../../assets/prime_twitter.png";
+import { BellIcon, SparkleIcon, SparklesIcon } from "lucide-react";
 
-  const handleJoin = async (e) => {
-    e.preventDefault()
-
-    if (!email || !firstName) {
-      setError("Please enter both first name and email")
-      setSuccess("")
-      return
-    }
-
-    // email validation regex
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
-      setError("Please enter a valid email address")
-      return
-    }
-
-    setLoading(true)
-
-    try {
-      const apiUrl = import.meta.env.VITE_API_URL;
-      await axios.post(`${apiUrl}/api/join-waitlist`, {
-        email,
-        firstName,
-      }, {
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': import.meta.env.VITE_WAITLIST_KEY,
-        },
-      })
-      setSuccess("🎉 You've joined the waitlist!")
-      setEmail("")
-      setFirstName("")
-    } catch (err) {
-      setError("❌ Something went wrong. Please try again.")
-    } finally {
-      setLoading(false)
-      setTimeout(() => {
-        setError("");
-        setSuccess("");
-      }, 2000);
-    }
-  }
+export default function HeroSection() {
+  const platforms = [
+    { label: "Google Ads", icon: GoogleIcon, className: "-left-6 -top-44" },
+    {
+      label: "Instagram Ads",
+      icon: InstagramIcon,
+      className: "-left-24 -top-24",
+    },
+    {
+      label: "Facebook Ads",
+      icon: FacebookIcon,
+      className: "-right-10 -top-44",
+    },
+    { label: "Twitter Ads", icon: TwitterIcon, className: "-right-24 -top-24" },
+  ];
 
   return (
-    <section className="bg-white relative overflow-hidden py-24 px-6">
-      {/* Background faint curves */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <img src={Dashboard} alt="" className="opacity-10" />
+    <section className="relative overflow-hidden bg-white px-6 pt-20 pb-20">
+      {/* Dotted background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle,_#f3f3f3_1px,_transparent_1px)] [background-size:40px_40px] pointer-events-none" />
+
+      {/* Faint curves - Left side */}
+      <div className="absolute pointer-events-none w-[40%] top-[16%] -left-[7%] opacity-40">
+        <img src={Rectangle} alt="" className="w-full h-full object-cover" />
+      </div>
+      <div className="absolute pointer-events-none w-[30%] top-[24%] -left-[3.5%] opacity-40">
+        <img src={Rectangle} alt="" className="w-full h-full object-cover" />
+      </div>
+      <div className="absolute pointer-events-none w-[15%] top-[32%] left-[3%] ">
+        <img src={Rectangle} alt="" className="w-full h-full object-cover" />
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto text-center">
-        {/* Yellow Badge */}
-        <div className="inline-flex items-center gap-2 bg-yellow-200 text-black font-medium px-4 py-1 rounded-full text-sm mb-4 mx-auto">
-          <span className="inline-block bg-black text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">⚡</span>
-          Use AI to automate everything
-        </div>
-
-        {/* Headline */}
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
-          Run Smarter Ads Across All Platforms — From One Dashboard.
-        </h1>
-
-        {/* Subheading */}
-        <p className="text-lg text-gray-500 mb-8">
-          No more switching between Meta, Google, TikTok, Twitter, or Email tools. <br />
-          With Growdex, create, launch, and track all your digital campaigns from one place, automatically.
-        </p>
-
-        {/* Waitlist Form */}
-        <form
-          onSubmit={handleJoin}
-          className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-2"
-        >
-          <input
-            type="text"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            placeholder="First name"
-            required
-            className="border border-gray-300 bg-white px-4 py-3 rounded-md w-full md:w-[200px] text-sm"
-          />
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder={placeholder}
-            required
-            className="border border-gray-300 bg-white px-4 py-3 rounded-md w-full md:w-[200px] text-sm"
-          />
-        <button
-  type="submit"
-  disabled={loading || !email || !firstName}
-  className="bg-black text-white px-5 py-3 rounded-md font-medium w-full text-center text-sm md:w-[150px] flex justify-center items-center cursor-pointer"
->
-  {loading ? (
-    <span className="w-5 h-5 rounded-full animate-spin border-2 border-t-transparent border-b-transparent border-l-white border-r-blue-400"></span>
-  ) : (
-    "Join Waitlist →"
-  )}
-</button>
-
-        </form>
-
-        {/* Feedback messages */}
-        {success && <div className="text-sm text-green-600 mt-2">{success}</div>}
-        {error && <div className="text-sm text-red-600 mt-2">{error}</div>}
-
-        {/* Avatar group */}
-        <div className="mt-6 flex flex-col items-center justify-center gap-2 text-gray-600 text-sm md:flex-row md:gap-4">
-          <div className="flex -space-x-4">
-            {[Eclipse1, Eclipse2, Eclipse3, Eclipse4, Eclipse5].map((src, i) => (
-              <img
-                key={i}
-                src={src}
-                alt={`User ${i + 1}`}
-                className="w-8 h-8 rounded-full border-2 border-white"
-              />
-            ))}
-          </div>
-          <img src={arrowVector} alt="" className="w-6 h-6 rotate-90 md:rotate-0" />
-          <span className="text-center">200+ people are already waiting</span>
-        </div>
-      </div>
-
-      {/* Dashboard Image */}
-      <div className="mt-16 w-full max-w-5xl mx-auto flex justify-center z-10">
+      {/* Faint curves - Right side (mirrored) */}
+      <div className="absolute pointer-events-none w-[40%] top-[16%] -right-[7%] opacity-40">
         <img
-          src={Dashboard1}
-          alt="Dashboard Preview"
-          className="rounded-xl shadow-2xl"
+          src={Rectangle}
+          alt=""
+          className="w-full h-full object-cover scale-x-[-1]"
         />
       </div>
+      <div className="absolute pointer-events-none w-[30%] top-[24%] -right-[3.5%] opacity-40">
+        <img
+          src={Rectangle}
+          alt=""
+          className="w-full h-full object-cover scale-x-[-1]"
+        />
+      </div>
+      <div className="absolute pointer-events-none w-[15%] top-[32%] right-[3%] ">
+        <img
+          src={Rectangle}
+          alt=""
+          className="w-full h-full object-cover scale-x-[-1]"
+        />
+      </div>
+
+      {/* Bottom white fade (transparent -> white) */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-48 bg-gradient-to-b from-white/0 to-white" />
+
+      <div className="relative z-10 mx-auto max-w-5xl text-center">
+        <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+          All your ad platforms.
+          <br />
+          <span className="font-extrabold">One unified dashboard.</span>
+        </h1>
+
+        <p className="mt-5 text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+          Plan, launch, manage, and optimize ads across platforms from one
+          place, powered by AI that brings clarity to your growth.
+        </p>
+
+        <div className="mt-8 flex justify-center">
+          <a href="#waitlist-banner" className="inline-flex">
+            <button className="bg-black text-white px-6 py-2 rounded-full text-sm font-medium">
+              Join the waitlist
+            </button>
+          </a>
+        </div>
+
+        {/* Dashboard / mockup */}
+        <div className="relative mt-14 mx-auto max-w-5xl">
+          <div className="relative">
+            <img
+              src={Dashboard2}
+              alt="Dashboard Preview"
+              className="w-full rounded-2xl shadow-2xl"
+            />
+
+            {/* Bottom overlays (desktop) */}
+            <div className="hidden md:block absolute -left-20 bottom-24">
+              <div
+                className="flex items-center gap-3 rounded-xl backdrop-blur-sm shadow-md px-4 py-3"
+                style={{
+                  background:
+                    "linear-gradient(256.23deg, #FFFFFF 46.69%, #FFE95C 190.21%, rgba(227, 199, 75, 0.5) 219.21%)",
+                }}
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-red-700 text-amber-100">
+                  <BellIcon className="w-4 h-4" />
+                </div>
+                <div className="text-left">
+                  <div className="text-xs font-semibold text-gray-900">
+                    5 optimization opportunities located
+                  </div>
+                  <div className="flex items-center text-[11px] text-yellow-400/40 mt-1">
+                    <SparklesIcon className="w-3 h-3 mr-1 " />
+                    Optimize for campaign goal
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="hidden md:block absolute -right-30 bottom-3">
+              <div
+                className="rounded-xl backdrop-blur-sm shadow-md px-4 py-3 text-left"
+                style={{
+                  background:
+                    "linear-gradient(256.23deg, #FFFFFF 46.69%, #FFE95C 190.21%, rgba(227, 199, 75, 0.5) 219.21%)",
+                }}
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <div className="text-xs font-semibold text-gray-900">
+                    Scheduled Campaign
+                  </div>
+                  <span className="rounded-full bg-green-100 px-2 py-1 text-[10px] font-semibold text-green-700">
+                    Scheduled
+                  </span>
+                </div>
+                <div className="mt-2 text-[11px] text-[#AD9D37]">
+                  Budget : ₦300,000 · 12-09-2025 by 8:00pm
+                </div>
+              </div>
+            </div>
+
+            {/* Floating platform pills (desktop) */}
+            {platforms.map((p) => (
+              <div
+                key={p.label}
+                className={`hidden md:flex absolute ${p.className} items-center gap-2 bg-gradient-to-r from-amber-200/40 to-white/70 backdrop-blur-sm rounded-full shadow-md px-3 py-2 text-xs text-gray-800 whitespace-nowrap`}
+              >
+                <img src={p.icon} alt="" className="w-4 h-4" />
+                <span>{p.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
-  )
+  );
 }
