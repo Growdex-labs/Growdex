@@ -15,7 +15,7 @@ const audiences = [
   { title: "Brands and creators\nrunning paid ads", image: wif5 },
 ];
 
-const CARD_WIDTH = 420;
+const CARD_WIDTH = 350;
 const GAP = 24;
 const STEP = CARD_WIDTH + GAP;
 
@@ -33,11 +33,11 @@ export default function WhoItsForSection() {
         <div className="grid md:grid-cols-[1.2fr_2fr] gap-16 items-center">
           {/* LEFT SIDE */}
           <div className="space-y-10">
-            <span className="inline-flex items-center rounded-full border border-gray-300 px-4 py-1 text-xs text-gray-700">
+            <span className="inline-flex items-center rounded-full border border-gray-300 px-4 py-1 text-xs text-[#AD9D37] font-semibold">
               Who’s it for?
             </span>
 
-            <p className="text-sm font-medium text-gray-700">
+            <p className="text-lg w-[30%] font-semibold text-gray-700">
               {audiences[activeIndex].title}
             </p>
 
@@ -54,7 +54,7 @@ export default function WhoItsForSection() {
               ))}
             </div>
 
-            <h2 className="text-4xl font-semibold text-gray-900 leading-tight">
+            <h2 className="text-4xl font-semibold bg-gradient-to-r from-gray-800 to-gray-500 bg-clip-text text-transparent leading-tight">
               If you run ads,
               <br />
               Growdex is built for you.
@@ -82,9 +82,9 @@ export default function WhoItsForSection() {
             </div>
 
             {/* Carousel */}
-            <div className="overflow-hidden max-w-[700px]">
+            <div className="overflow-hidden max-w-[700px] border-none bg-transparent">
               <div
-                className="flex gap-6 transition-transform duration-500 ease-out"
+                className="flex ml-2 gap-6 transition-transform duration-500 ease-out"
                 style={{
                   transform: `translateX(-${activeIndex * STEP}px)`,
                 }}
@@ -92,23 +92,29 @@ export default function WhoItsForSection() {
                 {audiences.map((audience, index) => (
                   <div
                     key={audience.title}
-                    className="flex-shrink-0 w-[420px] h-[280px]"
+                    className="flex-shrink-0 w-[350px] h-[350px]"
                   >
                     <div
-                      className={`h-[220px] rounded-3xl bg-white px-8 py-6 flex flex-col justify-between transition-all ${
-                        index === activeIndex ? "shadow-md" : "opacity-80"
+                      className={`h-[350px] rounded-3xl px-2 py-6 flex flex-col justify-between transition-all ${
+                        index === activeIndex
+                          ? "shadow-sm border border-gray-100"
+                          : "opacity-70"
                       }`}
+                      style={{
+                        background:
+                          "linear-gradient(256.23deg, #FFFFFF 46.69%, #FFE95C 190.21%, rgba(227, 199, 75, 0.5) 219.21%)",
+                      }}
                     >
-                      <div className="flex items-center justify-center h-[150px]">
+                      <div className="flex items-center justify-center flex-1">
                         <img
                           src={audience.image}
                           alt={audience.title}
-                          className="max-h-full max-w-full object-contain"
+                          className="max-h-[180px] max-w-full object-contain"
                           draggable="false"
                         />
                       </div>
 
-                      <p className="text-sm font-semibold text-gray-900 whitespace-pre-line">
+                      <p className="text-sm font-semibold text-gray-900 whitespace-pre-line text-center">
                         {audience.title}
                       </p>
                     </div>
