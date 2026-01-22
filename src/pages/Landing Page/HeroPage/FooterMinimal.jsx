@@ -27,7 +27,7 @@ export default function FooterMinimal() {
             </div>
           </div>
 
-          <div className="text-left text-xs text-gray-600 md:text-right">
+          <div className="text-left text-xs text-gray-600 md:text-left font-semibold space-y-1">
             <div>©2025 Growdex labs limited</div>
             <div>
               Built with <span className="text-red-500">♥</span> for MSMEs,

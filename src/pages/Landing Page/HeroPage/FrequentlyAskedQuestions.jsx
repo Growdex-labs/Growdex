@@ -57,7 +57,7 @@ function FrequentlyAskedQuestions() {
   return (
     <section className="relative overflow-hidden bg-gray-50 py-20 md:py-24">
       {/* Soft yellow wash behind the left column (like the design) */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-[52%] bg-gradient-to-b from-transparent via-amber-100/50 to-white" />
+      {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-[52%] bg-gradient-to-b from-transparent via-amber-100/50 to-white" /> */}
 
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="grid gap-14 md:grid-cols-[420px_1fr] md:gap-16 items-start">
@@ -94,7 +94,7 @@ function FrequentlyAskedQuestions() {
                 Join the waitlist and get early access when we launch.
               </p>
               <a href="#waitlist-banner" className="inline-block">
-                <button className="rounded-full bg-black px-5 py-2.5 text-xs font-medium text-white hover:bg-gray-800 transition-colors">
+                <button className="bg-black text-[#FFE95C] px-6 py-3 rounded-lg text-xs font-semibold hover:bg-gray-800 transition-colors">
                   Join the waitlist
                 </button>
               </a>

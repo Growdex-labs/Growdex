@@ -77,7 +77,7 @@ const LandingPage = () => {
         <OurProgressSection />
         <DevicePreviewSection />
         {/* <DashboardLayer /> */}
-        <OurUserKindWords />
+        {/* <OurUserKindWords /> */}
         {/* <MovingCards />
   <Integrations/> */}
         <FrequentlyAskedQuestions />

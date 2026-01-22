@@ -7,7 +7,7 @@ import Feature5 from "../../../assets/feature5.png";
 
 export default function FeaturesSection() {
   const featureCardBg =
-    "linear-gradient(256.23deg, #FFFFFF 46.69%, #FFE95C 190.21%, rgba(227, 199, 75, 0.5) 219.21%)";
+    "linear-gradient(252.96deg, #332C00 75.68%, #998400 102.22%)";
 
   return (
     <section className="relative bg-amber-50/30 py-20">
@@ -37,7 +37,7 @@ export default function FeaturesSection() {
             className="relative rounded-3xl border border-gray-100 p-3 overflow-hidden flex items-center"
             style={{ background: featureCardBg }}
           >
-            <p className="relative z-10 text-sm md:text-base font-semibold text-gray-900 leading-snug mt-auto">
+            <p className="relative z-10 text-sm md:text-base font-semibold text-white leading-snug mt-auto">
               AI-powered
               <br />
               performance insights
@@ -54,7 +54,7 @@ export default function FeaturesSection() {
             className="relative rounded-3xl border border-gray-100 p-3 overflow-hidden md:col-span-2 flex items-end"
             style={{ background: featureCardBg }}
           >
-            <p className="relative z-10 text-sm md:text-base font-semibold text-gray-900 leading-snug max-w-[240px]">
+            <p className="relative z-10 text-sm md:text-base font-semibold text-white leading-snug max-w-[240px]">
               Built for individuals,
               <br />
               teams, and agencies
@@ -71,7 +71,7 @@ export default function FeaturesSection() {
             className="relative rounded-3xl border border-gray-100 p-3 overflow-hidden flex justify-end items-end"
             style={{ background: featureCardBg }}
           >
-            <p className="text-sm  md:text-base font-bold text-gray-800 leading-snug ">
+            <p className="text-sm  md:text-base font-bold text-white leading-snug ">
               Unified ad
               <br />
               management
@@ -90,7 +90,7 @@ export default function FeaturesSection() {
             className="relative rounded-3xl border border-gray-100 p-3 overflow-hidden"
             style={{ background: featureCardBg }}
           >
-            <p className="text-sm md:text-base font-bold text-gray-800 leading-snug max-w-[240px]">
+            <p className="text-sm md:text-base font-bold text-white leading-snug max-w-[240px]">
               Campaign-level
               <br />
               optimization suggestions
@@ -107,7 +107,7 @@ export default function FeaturesSection() {
             className="relative rounded-3xl border border-gray-100 p-3 overflow-hidden"
             style={{ background: featureCardBg }}
           >
-            <p className="text-sm md:text-base font-bold text-gray-800 leading-snug max-w-[240px]">
+            <p className="text-sm md:text-base font-bold text-white leading-snug max-w-[240px]">
               Centralized analytics
               <br />
               and reporting
