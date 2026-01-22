@@ -23,7 +23,6 @@
 
 // // // export default Nav
 
-
 // // import React, { useState, useEffect } from 'react'
 // // import logo from "../../../assets/Frame 1686560934.png"
 // // import { Link } from 'react-router-dom'
@@ -75,7 +74,6 @@
 // // }
 
 // // export default Nav
-
 
 // // // Hambugger ADDED
 
@@ -182,7 +180,6 @@
 
 // // export default Nav
 
-
 // import React, { useState, useEffect } from 'react'
 // import logo from "../../../assets/Frame 1686560934.png"
 // import { Link } from 'react-router-dom'
@@ -222,43 +219,64 @@
 //         className={`transition-all duration-300 flex items-center justify-between px-6 md:px-12 py-4 w-[95%] max-w-5xl
 //           ${scrolled
 //             ? 'bg-white/90 backdrop-blur-md shadow-md rounded-full'
-//             : 'bg-transparent'}`}
-//       >
-//         <div className="flex justify-start gap-2 items-center">
-//           <img src={logo} alt="Logo" />
-//           <Link to="/">
-//             <div className="text-lg md:text-xl font-bold text-gray-800 cursor-pointer">Growdex</div>
-//           </Link>
-//         </div>
+{
+  /* Left: Logo */
+}
+<div className="flex items-center gap-2">
+  <img src={logo} alt="Logo" />
+  <Link to="/">
+    <div className="text-lg md:text-xl font-bold text-gray-800 cursor-pointer">
+      Growdex
+    </div>
+  </Link>
+</div>;
 
+{
+  /* Right: Desktop nav + CTA (single container), Mobile CTA + Hamburger */
+}
+<div className="flex items-center gap-3">
+  {/* Desktop pill nav */}
+  <div className="hidden md:flex items-center gap-2 bg-yellow-200 rounded-full px-3 py-2 text-sm font-medium text-gray-900">
+    <a href="#" className="px-2 hover:opacity-80 transition-opacity">
+      How it Works
+    </a>
+    <a href="#" className="px-2 hover:opacity-80 transition-opacity">
+      Integration
+    </a>
+    <a href="#" className="px-2 hover:opacity-80 transition-opacity">
+      Pricing
+    </a>
+    <Link to="/blog" className="px-2 hover:opacity-80 transition-opacity">
+      Blog
+    </Link>
+    <Link to="/agency" className="px-2 hover:opacity-80 transition-opacity">
+      Agency
+    </Link>
+  </div>
 
+  {/* Desktop CTA */}
+  <a href="#waitlist-banner" className="hidden md:inline-flex flex-shrink-0">
+    <button className="bg-yellow-200 text-gray-900 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap">
+      Sign up free
+    </button>
+  </a>
 
-//         {/* Desktop nav links */}
-//         <div className="hidden md:flex space-x-8 text-gray-600 font-medium text-sm">
-//           <a href="#">How It Works</a>
-//           <a href="#">Integrations</a>
-//           <a href="#">Pricing</a>
-//         </div>
+  {/* Mobile CTA (keeps your existing behavior) */}
+  <a href="#waitlist-banner" className="md:hidden inline-flex flex-shrink-0">
+    <button className="bg-black text-white px-3 py-2 rounded-full text-sm font-medium whitespace-nowrap">
+      Join Waitlist →
+    </button>
+  </a>
 
-//         {/* Join Waitlist button (desktop) */}
-//         <a href="#waitlist-banner" className="hidden md:block">
-//           <button className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium">
-//             Join Waitlist
-//           </button>
-//         </a>
-
-//         {/* Hamburger button (mobile) */}
-//         <button
-//           onClick={() => setIsOpen(true)}
-//           className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
-//           aria-label="Toggle menu"
-//         >
-
-//           <img src={hambugger} alt="" />
-//           {/* <span className="block h-0.5 w-full bg-gray-800 rounded" />
-//           <span className="block h-0.5 w-full bg-gray-800 rounded" />
-//           <span className="block h-0.5 w-full bg-gray-800 rounded" /> */}
-//         </button>
+  {/* Hamburger (mobile only) */}
+  <button
+    onClick={() => setIsOpen(true)}
+    className="md:hidden flex items-center justify-center w-8 h-8"
+    aria-label="Toggle menu"
+  >
+    <img src={hambugger} alt="menu" />
+  </button>
+</div>;
 //       </div>
 
 //       {/* Fullscreen mobile menu modal */}
@@ -306,88 +324,107 @@
 
 // export default Nav
 
-
-
-import React, { useState, useEffect } from 'react'
-import logo from "../../../assets/Frame 1686560934.png"
-import { Link } from 'react-router-dom'
-import bytesize from "../../../assets/bytesize_close.png"
-import hambugger from "../../../assets/menu hamburger (1).png"
+import React, { useState, useEffect } from "react";
+import logo from "../../../assets/Frame 1686560934.png";
+import { Link } from "react-router-dom";
+import bytesize from "../../../assets/bytesize_close.png";
+import hambugger from "../../../assets/menu hamburger (1).png";
 
 const Nav = () => {
-  const [scrolled, setScrolled] = useState(false)
-  const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10)
-    }
+      setScrolled(window.scrollY > 10);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Lock body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ''
+      document.body.style.overflow = "";
     }
 
     return () => {
-      document.body.style.overflow = ''
-    }
-  }, [isOpen])
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   return (
-<div className={`w-full z-50 flex justify-center ${scrolled && !isOpen ? 'sticky top-6' : ''}`}>
+    <div className={`w-full z-50 ${scrolled && !isOpen ? "sticky top-0" : ""}`}>
+      <div className="mx-auto w-full max-w-6xl px-4 md:px-8 py-4">
+        <div className="flex items-center justify-between">
+          {/* Left: Logo */}
+          <div className="flex items-center gap-2">
+            <img src={logo} alt="Logo" />
+            <Link to="/" className="text-lg md:text-xl font-bold text-gray-900">
+              Growdex
+            </Link>
+          </div>
 
-      <div
-        className={`transition-all duration-300 flex items-center justify-between px-6 md:px-12 py-4 w-[95%] max-w-5xl
-          ${scrolled
-            ? 'bg-white/90 backdrop-blur-md shadow-md rounded-full'
-            : 'bg-transparent'}`}
-      >
-<div className="flex items-center justify-between gap-4 px-4 w-full max-w-5xl mx-auto ">
-  {/* Left: Logo */}
-  <div className="flex items-center text- gap-2 -ml-6 md:ml-0">
-    <img src={logo} alt="Logo" />
-    <Link to="/">
-      <div className="text-lg md:text-xl font-bold text-gray-800 cursor-pointer">Growdex</div>
-    </Link>
-  </div>
+          <div className="flex">
+            {/* Middle: Desktop Navigation (Figma pill) */}
+            <nav className="hidden md:flex items-center rounded-full bg-yellow-200 px-6 py-2 text-sm font-medium text-gray-900">
+              <a
+                href="#pricing"
+                className="px-3 py-1 hover:opacity-80 transition-opacity"
+              >
+                Pricing
+              </a>
+              <a
+                href="#who-we-are"
+                className="px-3 py-1 hover:opacity-80 transition-opacity"
+              >
+                Who we are
+              </a>
+              <a
+                href="#our-impact"
+                className="px-3 py-1 hover:opacity-80 transition-opacity"
+              >
+                Our Impact
+              </a>
+              <a
+                href="#client"
+                className="px-3 py-1 hover:opacity-80 transition-opacity"
+              >
+                Client
+              </a>
+            </nav>
 
-  {/* Middle: Desktop Navigation */}
-  <div className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
-    <a href='#' to="/how-it-works" className="hover:text-black transition">How it Works</a>
-    <a href='#' to="/integration" className="hover:text-black transition">Integration</a>
-    <a href='#' to="/pricing" className="hover:text-black transition">Pricing</a >
-    <Link to="/blog" className="hover:text-black transition">Blog</Link>
-    <Link to="/agency" className="hover:text-black transition">Agency</Link>
-  </div>
+            {/* Right: Desktop CTA + Mobile Controls */}
+            <div className="flex items-center justify-end gap-4">
+              {/* Desktop CTA */}
+              <a
+                href="#waitlist-banner"
+                className="hidden md:inline-flex items-center rounded-full bg-yellow-200 px-5 py-3 text-sm font-semibold text-gray-900 hover:opacity-80 transition-opacity"
+              >
+                Sign up free
+              </a>
 
-  {/* Right: Join Waitlist + Hamburger */}
-  <div className="flex items-center gap-4">
-    {/* Join Waitlist */}
-    <a href="#waitlist-banner" className="flex-shrink-0">
-      <button className="bg-black text-white px-3 py-2 rounded-full text-sm font-medium whitespace-nowrap">
-      Join Waitlist →
-      </button>
-    </a>
+              {/* Mobile CTA */}
+              <a href="#waitlist-banner" className="md:hidden flex-shrink-0">
+                <button className="bg-black text-white px-3 py-2 rounded-full text-sm font-medium whitespace-nowrap">
+                  Join Waitlist →
+                </button>
+              </a>
 
-    {/* Hamburger (mobile only) */}
-    <button
-      onClick={() => setIsOpen(true)}
-      className="md:hidden flex items-center justify-center w-8 h-8"
-      aria-label="Toggle menu"
-    >
-      <img src={hambugger} alt="menu" />
-    </button>
-  </div>
-</div>
-
-
+              {/* Hamburger (mobile only) */}
+              <button
+                onClick={() => setIsOpen(true)}
+                className="md:hidden flex items-center justify-center w-8 h-8"
+                aria-label="Toggle menu"
+              >
+                <img src={hambugger} alt="menu" />
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Fullscreen mobile menu modal */}
@@ -418,11 +455,18 @@ const Nav = () => {
 
           {/* Menu links centered vertically */}
           <nav className="flex flex-col justify-start mt-6 items-center space-y-10 text-2xl font-semibold text-gray-800 flex-grow">
-            <a href="#" onClick={() => setIsOpen(false)}>How It Works</a>
-            <a href="#" onClick={() => setIsOpen(false)}>Integrations</a>
-            <a href="#" onClick={() => setIsOpen(false)}>Pricing</a>
-            <Link to="/blog" className="hover:text-black transition">Blog</Link>
-            <Link to="/agency" className="hover:text-black transition">Agency</Link>
+            <a href="#pricing" onClick={() => setIsOpen(false)}>
+              Pricing
+            </a>
+            <a href="#who-we-are" onClick={() => setIsOpen(false)}>
+              Who we are
+            </a>
+            <a href="#our-impact" onClick={() => setIsOpen(false)}>
+              Our Impact
+            </a>
+            <a href="#clientele" onClick={() => setIsOpen(false)}>
+              Clientele
+            </a>
           </nav>
 
           {/* Footer */}
@@ -432,7 +476,7 @@ const Nav = () => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

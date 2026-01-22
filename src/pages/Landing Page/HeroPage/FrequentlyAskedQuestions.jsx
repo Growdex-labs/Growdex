@@ -1,200 +1,119 @@
-
-
-
-// import React, { useState } from "react";
-// import FaqItem from "./FaqItem";
-
-// const faqData = {
-//   General: [
-//     {
-//       question: "What types of businesses use AzontoO?",
-//       answer:
-//         "AzontoO works for retail, fintech, healthcare, logistics, hospitality, and any business that processes payments and needs cashflow visibility.",
-//     },
-//     {
-//       question: " Do you integrate with our bank and payment processor?",
-//       answer:
-//         "Yes. We support integrations with a wide range of local and international banks, payment processors, and accounting tools.",
-//     },
-//     {
-//       question: "Can AzontoO handle chargebacks from multiple payment channels?",
-//       answer:
-//         "Absolutely. We consolidate chargebacks from different payment gateways, making it easier to track and resolve disputes.",
-//     },
-//     {
-//       question: " How long does onboarding take?",
-//       answer:
-//         "Typically, onboarding takes less than 7 days, depending on your integration needs.",
-//     },
-//     {
-//       question: " Is my financial data secure?",
-//       answer:
-//         "Yes. We use enterprise-grade encryption and comply with global data protection standards.",
-//     },
-//     {
-//       question: "What’s your pricing model?",
-//       answer:
-//         "Our pricing is based on your transaction volume and selected features. Contact us to get a custom quote.",
-//     },
-//   ],
-//   Payment: [
-//     {
-//       question: "How do I make payments?",
-//       answer: "Payments can be made via credit card, PayPal or bank transfer.",
-//     },
-//     {
-//       question: "Is there a refund policy?",
-//       answer: "Yes, you can request a refund within 7 days if conditions are met.",
-//     },
-//   ],
-//   Services: [
-//     {
-//       question: "Do you offer SEO services?",
-//       answer: "Yes, we offer basic and advanced SEO plans.",
-//     },
-//   ],
-//   Refund: [
-//     {
-//       question: "Can I cancel at any time?",
-//       answer: "Yes, cancellation is possible at any point from your dashboard.",
-//     },
-//   ],
-//   Contact: [
-//     {
-//       question: "How can I reach support?",
-//       answer: "You can contact support via chat, email or call.",
-//     },
-//   ],
-// };
-
-// function FrequentlyAskedQuestions() {
- 
-//     const categories = Object.keys(faqData);
-//     const [activeCategory, setActiveCategory] = useState("General");
-//     const [openIndex, setOpenIndex] = useState(null);
-  
-//     const handleToggle = (index) => {
-//       setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
-//     };
-  
-//     return (
-//       <section className="max-w-5xl mx-auto py-16 px-4">
-//         <h2 className="text-3xl font-bold mb-8 text-center">
-//           Questions asked frequently.
-//         </h2>
-  
-//         <div className="flex flex-wrap justify-center gap-4 mb-6">
-//           {categories.map((category) => (
-//             <button
-//               key={category}
-//               onClick={() => {
-//                 setActiveCategory(category);
-//                 setOpenIndex(null); // Reset open question on tab switch
-//               }}
-//               className={`px-4 py-2 rounded-full border ${
-//                 activeCategory === category
-//                   ? "bg-black text-white"
-//                   : "bg-white text-black"
-//               }`}
-//             >
-//               {category}
-//             </button>
-//           ))}
-//         </div>
-  
-//         <div>
-//           {faqData[activeCategory].map((item, index) => (
-//             <FaqItem
-//               key={index}
-//               question={item.question}
-//               answer={item.answer}
-//               isOpen={openIndex === index}
-//               onClick={() => handleToggle(index)}
-//             />
-//           ))}
-//         </div>
-//       </section>
-//     );
-// }
-
-// export default FrequentlyAskedQuestions;
-
-
 import React, { useState } from "react";
 import FaqItem from "./FaqItem";
+import FaqImage from "../../../assets/faq.png";
 
 const faqList = [
   {
-    question: "What is Growdex?",
+    question: "What platforms does Growdex support?",
     answer:
-      "Growdex is an all-in-one, AI-powered platform that lets you create, run, and manage digital ad campaigns across multiple platforms,  including Google, Meta (Facebook & Instagram), TikTok, LinkedIn, X (Twitter), and Email, all from one simple dashboard.",
+      "Growdex integrates with major advertising platforms including Google Ads, Meta (Facebook & Instagram), TikTok, LinkedIn, X (Twitter), and email marketing tools. All managed from one unified dashboard.",
   },
   {
-    question: "Who is Growdex built for?",
+    question: "Is Growdex for agencies or businesses?",
     answer:
-      "Growdex is built for anyone who runs digital ads — including small business owners, creators, marketers, founders, freelancers, and startup teams who want better results without the complexity.",
+      "Both! Growdex is built for small business owners, marketing teams, agencies, and anyone who runs digital ads. Whether you manage one account or multiple clients, we've got you covered.",
   },
   {
-    question: "How is Growdex different from other marketing tools?",
+    question: "Do I need technical knowledge to use Growdex?",
     answer:
-      "Most existing tools are expensive, fragmented, or built for large agencies. Growdex is designed to be affordable, AI-powered, and unified,  helping users publish campaigns across platforms in one click, track results in one place, and improve performance with smart recommendations.",
+      "Not at all. Growdex is designed to be user-friendly with AI-powered guidance. Our platform walks you through campaign creation, budget setup, and optimization — no technical expertise required.",
   },
   {
-    question: "Do I need to be an expert to use Growdex?",
+    question: "How does the AI optimization work?",
     answer:
-      "Not at all. Growdex is built to be simple and beginner-friendly. Whether you’re a first-time ad buyer or an experienced marketer, our AI will guide you through ad creation, budget setup, and optimization.",
+      "Growdex analyzes campaign data, identifies underperforming ads, suggests budget adjustments, generates copy variations, and provides actionable recommendations — helping you get better results faster.",
   },
   {
-    question: "Can I really launch ads on all platforms from one place?",
+    question: "Will Growdex run ads automatically for me?",
     answer:
-      "Yes,  that’s our goal. We’re integrating with major ad platforms (Meta, Google, TikTok, LinkedIn, X) so you can connect your accounts, create your ads, and launch campaigns from a single dashboard.",
+      "You're always in control. Growdex provides AI-powered recommendations and automation options, but you decide when and how to launch campaigns, adjust budgets, or implement changes.",
   },
   {
-    question: "What does the AI actually do?",
+    question: "Is my data safe?",
     answer:
-      "Growdex AI helps you run better campaigns by:\n\n• Writing effective ad copy\n• Recommending budget allocation\n• Suggesting creatives tailored to your industry\n• Analyzing performance and providing improvement tips",
-  },
-  
-  {
-    question: "How much will it cost to use Growdex?",
-    answer:
-      "We’re working on an affordable pricing model that supports early-stage businesses. Expect a freemium plan, with flexible upgrades based on usage and advanced features. Pricing will be announced soon.",
+      "Absolutely. We use enterprise-grade encryption and follow strict security protocols. Your campaign data, payment information, and client details are fully protected.",
   },
   {
-    question: "When will Growdex launch?",
+    question: "When will Growdex be available?",
     answer:
-      "We’re currently building our MVP. Early access for waitlist users will roll out soon. If you haven’t yet, join the waitlist to be among the first to get in.",
+      "We're currently in beta development. Join the waitlist to get early access and be among the first to experience Growdex when we launch.",
   },
   {
-    question: "Is my data safe on Growdex?",
+    question: "How much will Growdex cost?",
     answer:
-      "Absolutely. We take data privacy and security seriously. All data is encrypted and stored securely, and we follow platform-level compliance for every integration.",
+      "Pricing will be announced closer to launch. We're designing affordable plans for businesses of all sizes — from solopreneurs to agencies managing multiple clients.",
   },
 ];
 
 function FrequentlyAskedQuestions() {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndexes, setOpenIndexes] = useState([]);
 
   const handleToggle = (index) => {
-    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+    setOpenIndexes((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
   };
 
   return (
-    <section className="max-w-6xl mx-auto py-16 px-4">
-      <h2 className="text-4xl font-bold mb-24 text-center">
-         Frequently  Asked Questions.
-      </h2>
+    <section className="relative overflow-hidden bg-gray-50 py-20 md:py-24">
+      {/* Soft yellow wash behind the left column (like the design) */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-[52%] bg-gradient-to-b from-transparent via-amber-100/50 to-white" />
 
-      <div>
-        {faqList.map((item, index) => (
-          <FaqItem
-            key={index}
-            question={item.question}
-            answer={item.answer}
-            isOpen={openIndex === index}
-            onClick={() => handleToggle(index)}
-          />
-        ))}
+      <div className="relative mx-auto max-w-7xl px-6">
+        <div className="grid gap-14 md:grid-cols-[420px_1fr] md:gap-16 items-start">
+          {/* Left side */}
+          <div className="space-y-8">
+            <div className="inline-flex items-center rounded-full border border-gray-200 bg-white px-4 py-1.5 text-[11px] font-medium text-gray-700">
+              Ask us anything
+            </div>
+
+            <h2 className="text-4xl font-semibold text-gray-900 leading-tight">
+              Frequently Asked
+              <br />
+              Questions
+            </h2>
+
+            {/* Illustration */}
+            <div className="relative flex min-h-[340px] items-center justify-start">
+              <img
+                src={FaqImage}
+                alt=""
+                className="h-[280px] w-[280px] object-contain"
+                draggable={false}
+              />
+            </div>
+
+            {/* CTA */}
+            <div className="space-y-3">
+              <h3 className="text-base font-semibold text-gray-900 leading-snug">
+                Be the first to use
+                <br />
+                Growdex
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed max-w-[260px]">
+                Join the waitlist and get early access when we launch.
+              </p>
+              <a href="#waitlist-banner" className="inline-block">
+                <button className="rounded-full bg-black px-5 py-2.5 text-xs font-medium text-white hover:bg-gray-800 transition-colors">
+                  Join the waitlist
+                </button>
+              </a>
+            </div>
+          </div>
+
+          {/* Right side - FAQ list */}
+          <div className="space-y-4">
+            {faqList.map((item, index) => (
+              <FaqItem
+                key={index}
+                question={item.question}
+                answer={item.answer}
+                isOpen={openIndexes.includes(index)}
+                onClick={() => handleToggle(index)}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
