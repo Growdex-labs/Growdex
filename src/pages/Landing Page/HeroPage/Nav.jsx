@@ -370,7 +370,7 @@ const Nav = () => {
 
           <div className="flex">
             {/* Middle: Desktop Navigation (Figma pill) */}
-            <nav className="hidden md:flex items-center rounded-full bg-yellow-200 px-6 py-2 text-sm font-medium text-gray-900">
+            <nav className="hidden md:flex items-center px-6 py-2 text-sm font-medium text-gray-900">
               <a
                 href="#pricing"
                 className="px-3 py-1 hover:opacity-80 transition-opacity"
@@ -393,7 +393,7 @@ const Nav = () => {
                 href="#client"
                 className="px-3 py-1 hover:opacity-80 transition-opacity"
               >
-                Client
+                Clientele
               </a>
             </nav>
 
@@ -402,15 +402,15 @@ const Nav = () => {
               {/* Desktop CTA */}
               <a
                 href="#waitlist-banner"
-                className="hidden md:inline-flex items-center rounded-full bg-yellow-200 px-5 py-3 text-sm font-semibold text-gray-900 hover:opacity-80 transition-opacity"
+                className="hidden md:inline-flex items-center rounded-lg bg-yellow-200 px-4 py-3 text-sm font-semibold text-gray-900 hover:opacity-80 transition-opacity"
               >
-                Sign up free
+                Join the waitlist
               </a>
 
               {/* Mobile CTA */}
               <a href="#waitlist-banner" className="md:hidden flex-shrink-0">
-                <button className="bg-black text-white px-3 py-2 rounded-full text-sm font-medium whitespace-nowrap">
-                  Join Waitlist →
+                <button className="bg-black text-white px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap">
+                  Join the waitlist →
                 </button>
               </a>
 
@@ -439,7 +439,7 @@ const Nav = () => {
             <a href="#waitlist-banner">
               <button
                 onClick={() => setIsOpen(false)}
-                className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium"
+                className="bg-black text-white px-4 py-2 rounded-lg text-sm font-medium"
               >
                 Join Waitlist →
               </button>

@@ -7,6 +7,9 @@ import arrow3 from "../../../assets/arrow 3.png";
 import arrow4 from "../../../assets/arrow 4.png";
 import arrow5 from "../../../assets/arrow 5.png";
 import arrow6 from "../../../assets/arrow 6.png";
+import user1 from "../../../assets/user1.png";
+import user2 from "../../../assets/user2.png";
+import user3 from "../../../assets/user3.png";
 
 const stats = [
   {
@@ -104,9 +107,21 @@ export default function OurProgressSection() {
             >
               {stat.kind === "avatars" ? (
                 <div className="flex -space-x-2">
-                  <div className="h-9 w-9 rounded-full bg-gray-300 border-2 border-white" />
-                  <div className="h-9 w-9 rounded-full bg-gray-300 border-2 border-white" />
-                  <div className="h-9 w-9 rounded-full bg-gray-300 border-2 border-white" />
+                  <img
+                    src={user1}
+                    alt="User 1"
+                    className="h-9 w-9 rounded-full border-2 border-white object-cover"
+                  />
+                  <img
+                    src={user2}
+                    alt="User 2"
+                    className="h-9 w-9 rounded-full border-2 border-white object-cover"
+                  />
+                  <img
+                    src={user3}
+                    alt="User 3"
+                    className="h-9 w-9 rounded-full border-2 border-white object-cover"
+                  />
                 </div>
               ) : (
                 <div className="flex h-9 w-9 items-center justify-center rounded-full bg-amber-100">
