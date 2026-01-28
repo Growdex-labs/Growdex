@@ -27,11 +27,12 @@ const OurUserKindWords = () => {
 
       {/* Text Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-        <h2 className="text-2xl sm:text-xl md:text-5xl font-bold mb-2">
-          Integrate with  <br />multiple platforms
+        <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-2">
+          Integrate with <br />
+          multiple platforms
         </h2>
-        <p className="text-gray-600 text-xs sm:text-sm md:text-2xl max-w-md">
-        Integrate with all the leading social platforms across the internet
+        <p className="text-gray-600 text-xs sm:text-sm md:text-lg lg:text-2xl max-w-md">
+          Integrate with all the leading social platforms across the internet
         </p>
       </div>
     </div>

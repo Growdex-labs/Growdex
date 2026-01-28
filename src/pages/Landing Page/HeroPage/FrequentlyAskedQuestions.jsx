@@ -6,75 +6,95 @@ const faqList = [
   {
     question: "What platforms does Growdex support?",
     answer:
-      "Growdex integrates with major advertising platforms including Google Ads, Meta (Facebook & Instagram), TikTok, LinkedIn, X (Twitter), and email marketing tools. All managed from one unified dashboard.",
+      "Growdex integrates with major advertising platforms including Google Ads, Meta (Facebook & Instagram), TikTok, LinkedIn, X (Twitter), and email marketing tools — all from one unified dashboard.",
   },
   {
     question: "Is Growdex for agencies or businesses?",
     answer:
-      "Both! Growdex is built for small business owners, marketing teams, agencies, and anyone who runs digital ads. Whether you manage one account or multiple clients, we've got you covered.",
+      "Both. Growdex is built for individuals, businesses, marketing teams, and agencies managing one or multiple ad accounts.",
   },
   {
     question: "Do I need technical knowledge to use Growdex?",
     answer:
-      "Not at all. Growdex is designed to be user-friendly with AI-powered guidance. Our platform walks you through campaign creation, budget setup, and optimization — no technical expertise required.",
+      "No. Growdex is designed to be intuitive and beginner-friendly, with AI guidance at every step.",
   },
   {
     question: "How does the AI optimization work?",
     answer:
-      "Growdex analyzes campaign data, identifies underperforming ads, suggests budget adjustments, generates copy variations, and provides actionable recommendations — helping you get better results faster.",
+      "Growdex analyzes campaign performance, identifies opportunities, suggests optimizations, and helps improve ROI automatically.",
   },
   {
     question: "Will Growdex run ads automatically for me?",
     answer:
-      "You're always in control. Growdex provides AI-powered recommendations and automation options, but you decide when and how to launch campaigns, adjust budgets, or implement changes.",
+      "You stay in control. Growdex provides recommendations and automation options, but execution is always your decision.",
   },
   {
     question: "Is my data safe?",
     answer:
-      "Absolutely. We use enterprise-grade encryption and follow strict security protocols. Your campaign data, payment information, and client details are fully protected.",
+      "Yes. We use enterprise-grade security and encryption to protect all your data.",
   },
   {
     question: "When will Growdex be available?",
     answer:
-      "We're currently in beta development. Join the waitlist to get early access and be among the first to experience Growdex when we launch.",
+      "We’re currently in beta. Join the waitlist to get early access at launch.",
   },
   {
     question: "How much will Growdex cost?",
     answer:
-      "Pricing will be announced closer to launch. We're designing affordable plans for businesses of all sizes — from solopreneurs to agencies managing multiple clients.",
+      "Pricing will be announced closer to launch, with flexible plans for all business sizes.",
   },
 ];
 
-function FrequentlyAskedQuestions() {
+export default function FrequentlyAskedQuestions() {
   const [openIndexes, setOpenIndexes] = useState([]);
 
   const handleToggle = (index) => {
     setOpenIndexes((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index],
     );
   };
 
   return (
-    <section className="relative overflow-hidden bg-gray-50 py-20 md:py-24">
-      {/* Soft yellow wash behind the left column (like the design) */}
-      {/* <div className="pointer-events-none absolute inset-y-0 left-0 w-[52%] bg-gradient-to-b from-transparent via-amber-100/50 to-white" /> */}
+    <section
+      id="faqs"
+      className="relative overflow-hidden py-16 md:py-24"
+    >
+      {/* ✅ Soft yellow glow (NOT a background fill) */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-[100px]
+          bottom-[600px]
+          sm:left-[200px]
+          sm:bottom-[200px]
+          sm:h-[420px]
+          sm:w-[520px]
+          h-[350px]
+          w-[250px]
+          rounded-full
+          bg-[#FFE27A]
+          opacity-[0.65]
+          blur-[160px]
+        "
+      />
 
       <div className="relative mx-auto max-w-7xl px-6">
-        <div className="grid gap-14 md:grid-cols-[420px_1fr] md:gap-16 items-start">
-          {/* Left side */}
+        <div className="grid items-start gap-12 md:grid-cols-[420px_1fr] md:gap-20">
+          {/* LEFT COLUMN */}
           <div className="space-y-8">
-            <div className="inline-flex items-center rounded-full border border-gray-200 bg-white px-4 py-1.5 text-[11px] font-medium text-gray-700">
+            <div className="inline-flex items-center rounded-full border border-gray-200 bg-white px-4 py-1.5 text-xs font-medium text-gray-700">
               Ask us anything
             </div>
 
-            <h2 className="text-4xl font-semibold text-gray-900 leading-tight">
+            <h2 className="text-4xl font-semibold leading-tight text-gray-900">
               Frequently Asked
               <br />
               Questions
             </h2>
 
             {/* Illustration */}
-            <div className="relative flex min-h-[340px] items-center justify-start">
+            <div className="relative hidden md:block">
               <img
                 src={FaqImage}
                 alt=""
@@ -84,24 +104,24 @@ function FrequentlyAskedQuestions() {
             </div>
 
             {/* CTA */}
-            <div className="space-y-3">
-              <h3 className="text-base font-semibold text-gray-900 leading-snug">
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-gray-900">
                 Be the first to use
                 <br />
                 Growdex
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed max-w-[260px]">
+              <p className="max-w-[260px] text-sm leading-relaxed text-gray-600">
                 Join the waitlist and get early access when we launch.
               </p>
-              <a href="#waitlist-banner" className="inline-block">
-                <button className="bg-black text-[#FFE95C] px-6 py-3 rounded-lg text-xs font-semibold hover:bg-gray-800 transition-colors">
+              <a href="#waitlist-banner">
+                <button className="rounded-lg bg-black px-6 py-3 text-xs font-semibold text-[#FFE95C] transition hover:bg-gray-800">
                   Join the waitlist
                 </button>
               </a>
             </div>
           </div>
 
-          {/* Right side - FAQ list */}
+          {/* RIGHT COLUMN – FAQ LIST */}
           <div className="space-y-4">
             {faqList.map((item, index) => (
               <FaqItem
@@ -118,5 +138,3 @@ function FrequentlyAskedQuestions() {
     </section>
   );
 }
-
-export default FrequentlyAskedQuestions;
