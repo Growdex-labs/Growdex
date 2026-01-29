@@ -31,7 +31,7 @@ const stats = [
 
 export default function OurProgressSection() {
   return (
-    <section className="relative overflow-hidden bg-white py-28">
+    <section className="relative overflow-hidden bg-white py-16 sm:py-20 md:py-28">
       {/* Soft top-to-bottom wash (keeps the section light, like Figma) */}
       <div
         className="pointer-events-none absolute inset-0 opacity-60"
@@ -48,7 +48,7 @@ export default function OurProgressSection() {
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[520px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial from-amber-200/25 via-amber-100/10 to-transparent blur-2xl" />
 
       {/* Faint big arrows (absolute) */}
-      <div className="pointer-events-none absolute inset-0 brightness-125 saturate-50">
+      <div className="pointer-events-none absolute inset-0 brightness-125 saturate-50 hidden md:block">
         <img
           src={arrow1}
           alt=""
@@ -88,14 +88,14 @@ export default function OurProgressSection() {
       </div>
 
       {/* Arc rings */}
-      <div className="pointer-events-none absolute left-1/2 top-[62%] h-[760px] w-[760px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-amber-200/40 opacity-35" />
-      <div className="pointer-events-none absolute left-1/2 top-[62%] h-[680px] w-[680px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-amber-200/30 opacity-35" />
-      <div className="pointer-events-none absolute left-1/2 top-[62%] h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-amber-200/20 opacity-35" />
+      <div className="pointer-events-none absolute left-1/2 top-[62%] h-[500px] w-[500px] sm:h-[680px] sm:w-[680px] md:h-[760px] md:w-[760px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-amber-200/40 opacity-35" />
+      <div className="pointer-events-none absolute left-1/2 top-[62%] h-[450px] w-[450px] sm:h-[600px] sm:w-[600px] md:h-[680px] md:w-[680px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-amber-200/30 opacity-35" />
+      <div className="pointer-events-none absolute left-1/2 top-[62%] h-[400px] w-[400px] sm:h-[520px] sm:w-[520px] md:h-[600px] md:w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-amber-200/20 opacity-35" />
 
-      <div className="relative mx-auto max-w-6xl px-6">
+      <div className="relative w-full">
         <div className="relative mx-auto flex min-h-[420px] max-w-5xl items-center justify-center">
           {/* Center pill */}
-          <div className="rounded-full bg-gradient-to-br from-amber-100/40 via-amber-50 to-white bg-amber-50/60 px-10 py-5 text-2xl font-medium text-gray-900 shadow-sm backdrop-blur-[88.1px]">
+          <div className="rounded-full bg-gradient-to-br from-amber-100/40 via-amber-50 to-white bg-amber-50/60 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-lg sm:text-xl md:text-2xl font-medium text-gray-900 shadow-sm backdrop-blur-[88.1px]">
             Our Progress
           </div>
 

@@ -3,39 +3,57 @@ import ScreenPreview from "../../../assets/screen previews.png";
 
 export default function DevicePreviewSection() {
   return (
-    <section className="relative py-20 overflow-hidden bg-amber-50/30">
-      <div
-        className="mx-auto max-w-6xl h-100 p-6 rounded-xl"
-        style={{
-          background:
-            "linear-gradient(101.08deg, #332C00 28.2%, #998400 87.25%)",
-        }}
-      >
-        <div className="grid md:grid-cols-2 gap-12 items-center p-4">
-          {/* Left side - Text content */}
-          <div className="space-y-6">
-            <h2 className="text-2xl md:text-3xl font-medium text-[#FFE95C] leading-tight">
-              Most ad tools show you numbers.{" "}
-              <span className="font-bold">
-                Growdex shows you what to do with them.
-              </span>
-            </h2>
-            <p className="text-sm text-gray-200 pt-10 leading-relaxed max-w-md">
-              We’re building Growdex to remove complexity, reduce wasted spend,
-              and make growth clearer at every stage.
-            </p>
-            <button className="bg-black text-[#FFE95C] px-6 py-3 rounded-lg mt-6 text-xs font-semibold hover:bg-gray-800 transition-colors">
-              Join the waitlist
-            </button>
-          </div>
+    <section className="relative overflow-hidden py-10 sm:py-14 md:py-20">
+      <div className="w-full">
+        <div
+          className="relative overflow-visible rounded-2xl sm:rounded-3xl px-6 pt-7 pb-0 sm:p-8 md:px-12 md:pt-12 md:pb-12"
+          style={{
+            background:
+              "linear-gradient(135deg, #0D0B00 0%, #2B2600 38%, #6A5B00 100%)",
+          }}
+        >
+          <div className="grid gap-10 md:grid-cols-2 md:items-start">
+            {/* Left side - Text content */}
+            <div className="max-w-xl">
+              <h2 className="text-xl leading-[1.12] sm:text-3xl md:text-5xl md:leading-[1.08] font-semibold text-[#FFE95C]">
+                <span className="md:hidden">
+                  Most ad tools show you numbers.{" "}
+                  <span className="font-extrabold">
+                    Growdex shows you
+                    <br />
+                    what to do with them.
+                  </span>
+                </span>
+                <span className="hidden md:inline">
+                  Most ad tools show you numbers.{" "}
+                  <span className="font-extrabold">
+                    Growdex shows you what to do with them.
+                  </span>
+                </span>
+              </h2>
 
-          {/* Right side - Device mockup */}
-          <div className="relative">
-            <img
-              src={ScreenPreview}
-              alt="Growdex dashboard on desktop and mobile"
-              className="w-[800px] h-auto absolute -right-26 z-50 -top-6"
-            />
+              <p className="mt-5 text-[13px] sm:text-sm text-white/75 leading-relaxed max-w-md">
+                We’re building Growdex to remove complexity, reduce wasted
+                spend, and make growth clearer at every stage.
+              </p>
+
+              <a href="#waitlist-banner" className="inline-flex mt-7">
+                <button className="!bg-black !text-[#FFE95C] px-6 py-3 rounded-xl text-sm font-semibold shadow-[0_14px_30px_rgba(0,0,0,0.18)] hover:bg-black/90 transition-colors">
+                  Join the waitlist
+                </button>
+              </a>
+            </div>
+
+            {/* Right side - Device mockup */}
+            <div className="relative flex justify-center md:block md:min-h-[420px] lg:min-h-[460px]">
+              <div className="relative mx-auto w-full max-w-[560px] md:max-w-none">
+                <img
+                  src={ScreenPreview}
+                  alt="Growdex dashboard on desktop and mobile"
+                  className="pointer-events-none select-none w-[108%] max-w-none mx-auto -mb-3 h-auto object-contain md:absolute md:-right-[64px] md:top-26 md:bottom-auto md:w-[850px]"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

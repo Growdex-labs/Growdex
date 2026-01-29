@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  ChevronsLeft,
+  ChevronsRight,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 import wif1 from "../../../assets/wif1.png";
 import wif2 from "../../../assets/wif2.png";
@@ -12,115 +17,149 @@ const audiences = [
   { title: "Marketing teams", image: wif2 },
   { title: "Performance marketers", image: wif3 },
   { title: "Agencies", image: wif4 },
-  { title: "Brands and creators\nrunning paid ads", image: wif5 },
+  { title: "Brands and creators running paid ads", image: wif5 },
 ];
 
-const CARD_WIDTH = 350;
-const GAP = 24;
-const STEP = CARD_WIDTH + GAP;
+const DESKTOP_CARD_WIDTH = 350;
+const DESKTOP_GAP = 24;
+const DESKTOP_STEP = DESKTOP_CARD_WIDTH + DESKTOP_GAP;
 
 export default function WhoItsForSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const next = () =>
-    setActiveIndex((i) => Math.min(i + 1, audiences.length - 1));
-
-  const prev = () => setActiveIndex((i) => Math.max(i - 1, 0));
+  const goToIndex = (i) =>
+    setActiveIndex(Math.max(0, Math.min(i, audiences.length - 1)));
 
   return (
-    <section className="bg-[#F9FAFB] py-24">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid md:grid-cols-[1.2fr_2fr] gap-16 items-center">
-          {/* LEFT SIDE */}
-          <div className="space-y-10">
-            <span className="inline-flex items-center rounded-full border border-gray-300 px-4 py-1 text-xs text-[#AD9D37] font-semibold">
-              Who’s it for?
-            </span>
+    <section className="py-12 sm:py-16 md:py-24 overflow-x-hidden">
+      <div className="grid md:grid-cols-[1.2fr_2fr] gap-8 md:gap-16 items-center px-4 md:px-0 max-w-full">
+        {/* LEFT */}
+        <div className="space-y-6 md:space-y-10 min-w-0">
+          <span className="inline-flex rounded-full border px-4 py-1 text-xs font-semibold text-[#AD9D37]">
+            Who’s it for?
+          </span>
 
-            <p className="text-lg w-[30%] font-semibold text-gray-700">
+          {/* MOBILE TITLE */}
+          <div className="md:hidden flex items-center gap-2 min-w-0">
+            <div className="flex items-center gap-2 min-w-0 flex-1">
+              <span className="h-4 w-1 bg-yellow-400 rounded-full shrink-0" />
+              <p className="text-lg font-semibold truncate">
+                {audiences[activeIndex].title}
+              </p>
+            </div>
+
+            <div className="flex shrink-0">
+              <button
+                onClick={() => goToIndex(activeIndex - 1)}
+                disabled={activeIndex === 0}
+                className="p-1 text-yellow-500 disabled:opacity-30"
+              >
+                <ChevronsLeft size={18} />
+              </button>
+              <button
+                onClick={() => goToIndex(activeIndex + 1)}
+                disabled={activeIndex === audiences.length - 1}
+                className="p-1 text-yellow-500 disabled:opacity-30"
+              >
+                <ChevronsRight size={18} />
+              </button>
+            </div>
+          </div>
+
+          {/* DESKTOP TITLE */}
+          <div className="hidden md:flex items-center gap-2">
+            <span className="h-4 w-1 bg-yellow-400 rounded-full" />
+            <p className="text-lg font-semibold text-gray-700">
               {audiences[activeIndex].title}
             </p>
+          </div>
 
-            {/* Progress bars */}
-            <div className="flex gap-2 max-w-xs">
-              {audiences.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveIndex(i)}
-                  className={`h-[3px] flex-1 rounded-full transition-colors ${
-                    i === activeIndex ? "bg-yellow-400" : "bg-gray-200"
-                  }`}
-                />
+          {/* PROGRESS BAR — FIXED */}
+          <div className="flex gap-2 w-full overflow-hidden">
+            {audiences.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goToIndex(i)}
+                className={`h-[3px] flex-1 rounded-full ${
+                  i === activeIndex ? "bg-yellow-400" : "bg-gray-200"
+                }`}
+              />
+            ))}
+          </div>
+
+          <h2 className="text-xl sm:text-4xl font-semibold">
+            If you run ads,
+            <br />
+            Growdex is built for you.
+          </h2>
+        </div>
+
+        {/* RIGHT */}
+        <div className="relative min-w-0">
+          {/* MOBILE CAROUSEL */}
+          <div className="md:hidden overflow-hidden w-full">
+            <div
+              className="flex transition-transform duration-500"
+              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+            >
+              {audiences.map((a) => (
+                <div key={a.title} className="w-full shrink-0 px-4">
+                  <div className="w-full rounded-3xl bg-[#FFF9D8]">
+                    <div className="flex justify-center p-6">
+                      <img
+                        src={a.image}
+                        alt={a.title}
+                        className="max-h-[220px] object-contain"
+                      />
+                    </div>
+                    <p className="pb-6 text-center font-semibold px-4">
+                      {a.title}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* DESKTOP CAROUSEL */}
+          <div className="hidden md:block overflow-hidden max-w-[700px]">
+            <div
+              className="flex gap-6 transition-transform duration-500"
+              style={{
+                transform: `translateX(-${activeIndex * DESKTOP_STEP}px)`,
+              }}
+            >
+              {audiences.map((a, i) => (
+                <div key={a.title} className="w-[350px] h-[350px] shrink-0">
+                  <div
+                    className={`h-full rounded-3xl p-6 flex flex-col ${
+                      i === activeIndex ? "" : "opacity-70"
+                    }`}
+                    style={{
+                      background:
+                        "linear-gradient(256deg, #FFFFFF 46%, #FFE95C 180%)",
+                    }}
+                  >
+                    <div className="flex-1 flex items-center justify-center">
+                      <img
+                        src={a.image}
+                        alt={a.title}
+                        className="max-h-[200px]"
+                      />
+                    </div>
+                    <p className="text-center font-semibold">{a.title}</p>
+                  </div>
+                </div>
               ))}
             </div>
 
-            <h2 className="text-4xl font-semibold bg-gradient-to-r from-gray-800 to-gray-500 bg-clip-text text-transparent leading-tight">
-              If you run ads,
-              <br />
-              Growdex is built for you.
-            </h2>
-          </div>
-
-          {/* RIGHT SIDE */}
-          <div className="relative">
-            {/* Navigation arrows */}
-            <div className="absolute -top-10 right-0 flex gap-2">
-              <button
-                onClick={prev}
-                disabled={activeIndex === 0}
-                className="p-2 rounded-full border bg-white text-gray-600 disabled:opacity-40"
-              >
-                <ChevronLeft size={18} />
+            <div className="absolute -top-10 right-0 hidden md:flex gap-2">
+              <button onClick={() => goToIndex(activeIndex - 1)}>
+                <ChevronLeft />
               </button>
-              <button
-                onClick={next}
-                disabled={activeIndex === audiences.length - 1}
-                className="p-2 rounded-full border bg-white text-gray-600 disabled:opacity-40"
-              >
-                <ChevronRight size={18} />
+              <button onClick={() => goToIndex(activeIndex + 1)}>
+                <ChevronRight />
               </button>
-            </div>
-
-            {/* Carousel */}
-            <div className="overflow-hidden max-w-[700px] border-none bg-transparent">
-              <div
-                className="flex ml-2 gap-6 transition-transform duration-500 ease-out"
-                style={{
-                  transform: `translateX(-${activeIndex * STEP}px)`,
-                }}
-              >
-                {audiences.map((audience, index) => (
-                  <div
-                    key={audience.title}
-                    className="flex-shrink-0 w-[350px] h-[350px]"
-                  >
-                    <div
-                      className={`h-[350px] rounded-3xl px-2 py-6 flex flex-col justify-between transition-all ${
-                        index === activeIndex
-                          ? "shadow-sm border border-gray-100"
-                          : "opacity-70"
-                      }`}
-                      style={{
-                        background:
-                          "linear-gradient(256.23deg, #FFFFFF 46.69%, #FFE95C 190.21%, rgba(227, 199, 75, 0.5) 219.21%)",
-                      }}
-                    >
-                      <div className="flex items-center justify-center flex-1">
-                        <img
-                          src={audience.image}
-                          alt={audience.title}
-                          className="max-h-[180px] max-w-full object-contain"
-                          draggable="false"
-                        />
-                      </div>
-
-                      <p className="text-sm font-semibold text-gray-900 whitespace-pre-line text-center">
-                        {audience.title}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>

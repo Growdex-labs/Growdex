@@ -2,7 +2,6 @@
 import Hero from "./Hero.jsx";
 import Nav from "./Nav.jsx";
 import WhatGrowdexDoes from "./WhatGrowdexDoes.jsx";
-import WhatIsGrowdexSection from "./WhatIsGrowdexSection.jsx";
 import FeaturesRow from "./FeaturesRow.jsx";
 import FeaturesSection from "./FeaturesSection.jsx";
 import WhoItsForSection from "./WhoItsForSection.jsx";
@@ -27,64 +26,31 @@ const LandingPage = () => {
   const [isCompanyHovered, setIsCompanyHovered] = useState(false);
 
   return (
-    <>
-      {/*  Nav OUTSIDE hero container */}
+    <div
+      id="home"
+      className="font-sans max-w-6xl lg:max-w-[1440px] mx-auto relative min-h-screen overflow-x-hidden px-6 md:px-12"
+    >
       {/* <Nav onCompanyHover={setIsCompanyHovered} /> */}
+      {/* <DashboardLayer /> */}
+      {/* <OurUserKindWords /> */}
+      {/* <MovingCards /> */}
+      {/* <Integrations /> */}
+      {/* <Banner /> */}
 
-      <div
-        className="font-sans bg-center bg-no-repeat bg-cover relative "
-        // style={{ backgroundImage: `url(${Property})` }}
-      >
-        {/* Blur overlay */}
-        {/* <div
-      className={`absolute inset-0 transition-all duration-1000 ease-in-out 
-        ${isCompanyHovered ? "backdrop-blur-md bg-white/10" : "backdrop-blur-0 bg-transparent"}
-      `}
-    ></div> */}
-
-        {/* Hero */}
-        {/* <div
-      className={`relative z-10 transition-all duration-[3000ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform transform ${
-        isCompanyHovered
-          ? "opacity-300 blur-[10px] translate-y-0 scale-[0.98]"
-          : "opacity-100 blur-0 translate-y-0 scale-100"
-      }`}
-    > */}
-        <div
-          className={`relative z-10 transition-all duration-[3000ms] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-transform ${
-            isCompanyHovered ? "opacity-80 blur-[10px]" : "opacity-100 blur-0"
-          }`}
-        >
-          {/* 
-      <Hero /> */}
-        </div>
-      </div>
-
-      {/* Other sections */}
-      <div>
-        {/* <BottomLogos />
-  <WhyWeUseAzonto />
-  <IncreaseProductivity/>
-  <SpinningAzonto />
-  <WhyWeUseAzontoReverse /> */}
-        <Nav />
-        <Hero />
-        <WhatGrowdexDoes />
-        <WhatIsGrowdexSection />
-        <FeaturesRow />
-        <FeaturesSection />
-        <WhoItsForSection />
+      <Nav />
+      <Hero />
+      <WhatGrowdexDoes />
+      <FeaturesRow />
+      <FeaturesSection />
+      <WhoItsForSection />
+      <div className="hidden md:block">
         <OurProgressSection />
-        <DevicePreviewSection />
-        {/* <DashboardLayer /> */}
-        {/* <OurUserKindWords /> */}
-        {/* <MovingCards />
-  <Integrations/> */}
-        <FrequentlyAskedQuestions />
-        {/* <Banner /> */}
-        <Footer />
       </div>
-    </>
+      <DevicePreviewSection />
+      <FrequentlyAskedQuestions />
+      <Banner />
+      <Footer />
+    </div>
   );
 };
 
