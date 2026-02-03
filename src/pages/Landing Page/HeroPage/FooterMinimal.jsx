@@ -248,7 +248,7 @@ This Cookie Policy explains how Growdex ("we", "our", "us") uses cookies and sim
                 </div>
                 <div className="mt-4 flex items-center gap-4">
                   <a
-                    href="https://x.com/growdexhq?s=21"
+                    href="https://www.linkedin.com/company/growdexhq/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
@@ -266,7 +266,7 @@ This Cookie Policy explains how Growdex ("we", "our", "us") uses cookies and sim
                     <img src={instagramIcon} alt="" className="h-5 w-5" />
                   </a>
                   <a
-                    href="https://www.linkedin.com/company/growdexhq/"
+                    href="https://www.facebook.com/share/1FfTsmVb9m/?mibextid=wwXIfr"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook"
@@ -275,7 +275,7 @@ This Cookie Policy explains how Growdex ("we", "our", "us") uses cookies and sim
                     <img src={facebookIcon} alt="" className="h-5 w-5" />
                   </a>
                   <a
-                    href="https://www.facebook.com/share/1FfTsmVb9m/?mibextid=wwXIfr"
+                    href="https://x.com/growdexhq?s=21"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Twitter"
