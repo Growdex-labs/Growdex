@@ -4,6 +4,7 @@ import BlogDetail from "./components/pages/Blogs/BlogDetail.jsx";
 import GrowDexBlog from "./components/pages/Blogs/GrowdexBlog.jsx";
 import NotFoundPage from "./pages/Landing Page/NotFoundPage.jsx";
 import AgencyPage from "./pages/Landing Page/agency/Page.jsx";
+import HelpCenter from "./pages/HelpCenter/index.jsx";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path="/agency" element={<AgencyPage />} />
       <Route path="/blog" element={<GrowDexBlog />} />
       <Route path="/blog/:slug" element={<BlogDetail />} />
+      <Route path="/help-center" element={<HelpCenter />} />
 
       <Route path="*" element={<NotFoundPage />} />
     </Routes>

@@ -326,7 +326,7 @@ This Cookie Policy explains how Growdex ("we", "our", "us") uses cookies and sim
               {/* Column 2 */}
               <div className="space-y-10">
                 <FooterSection title="Resources">
-                  <FooterLink href="#">Help Center</FooterLink>
+                  <FooterLink href="/help-center">Help Center</FooterLink>
                   <FooterLink href="#">Documentation</FooterLink>
                   <FooterLink href="#faqs">FAQs</FooterLink>
                   <FooterLink href="mailto:hello@growdex.ai">
@@ -335,7 +335,7 @@ This Cookie Policy explains how Growdex ("we", "our", "us") uses cookies and sim
                 </FooterSection>
 
                 <FooterSection title="Resources">
-                  <FooterLink href="#">Help Center</FooterLink>
+                  <FooterLink href="/help-center">Help Center</FooterLink>
                   <FooterLink href="#">Documentation</FooterLink>
                   <FooterLink href="#faqs">FAQs</FooterLink>
                   <FooterLink href="mailto:hello@growdex.ai">
