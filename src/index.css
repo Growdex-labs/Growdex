@@ -1,8 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
 
 :root {
-  font-family: "Lexend", system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
-    Arial, sans-serif;
+  font-family:
+    "Lexend",
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -81,4 +88,31 @@ button:focus-visible {
 .scrollbar-hide {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.hero-stage {
+  min-height: 870px;
+}
+.hero-wave {
+  position: absolute;
+  bottom: -76px;
+  z-index: 20;
+  width: 230px;
+  height: 150px;
+  border-radius: 90px 90px 0 0;
+  background: white;
+}
+.hero-wave-left {
+  left: -80px;
+}
+.hero-wave-right {
+  right: -80px;
+}
+@media (max-width: 767px) {
+  .hero-stage {
+    min-height: 760px;
+  }
+  .hero-wave {
+    display: none;
+  }
 }
