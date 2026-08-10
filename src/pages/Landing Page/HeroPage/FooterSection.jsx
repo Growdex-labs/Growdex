@@ -4,11 +4,11 @@ import FaqItem from "./FaqItem.jsx";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import cloudLeftLarge from "../../../assets/New Design/growdex-footer-cloud-left-large.png";
-import cloudLeftSmall from "../../../assets/New Design/growdex-footer-cloud-left-small.png";
-import cloudRight from "../../../assets/New Design/growdex-footer-cloud-right.png";
-import helpMark from "../../../assets/New Design/growdex-footer-help-mark.png";
-import logoMark from "../../../assets/New Design/growdex-footer-logo-mark.png";
+import cloudLeftLarge from "../../../assets/growdex-footer-cloud-left-large.png";
+import cloudLeftSmall from "../../../assets/growdex-footer-cloud-left-small.png";
+import cloudRight from "../../../assets/growdex-footer-cloud-right.png";
+import helpMark from "../../../assets/growdex-footer-help-mark.png";
+import logoMark from "../../../assets/growdex-footer-logo-mark.png";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 

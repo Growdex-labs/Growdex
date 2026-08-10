@@ -17,9 +17,9 @@ function App() {
       <Route path="/agency" element={<AgencyPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/pricing" element={<PricingPage />} />
-      {/* The old blog listing fetched posts and blocked on <Loader/>; the
-          redesigned resources UI renders in its place with no data dependency.
-          GrowdexBlog.jsx is untouched on disk if it needs to come back. */}
+      {/* The old GrowdexBlog listing fetched posts and blocked on <Loader/>;
+          the redesigned resources UI renders in its place with no data
+          dependency. See git history if that fetch logic is needed again. */}
       <Route path="/blog" element={<BlogPage />} />
       {/* Three segments, so this never collides with /blog/:slug. */}
       <Route path="/blog/topic/:slug" element={<TopicPage />} />

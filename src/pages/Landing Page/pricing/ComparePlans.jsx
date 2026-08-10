@@ -3,10 +3,10 @@ import { BadgeCheck, CircleCheck } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import cloudLeft from "../../../assets/New Design/growdex-pricing-cloud-left.png";
-import cloudRight from "../../../assets/New Design/growdex-pricing-cloud-right.png";
-import blackLeft from "../../../assets/New Design/growdex-faq-showcase-black-left.png";
-import blackRight from "../../../assets/New Design/growdex-faq-showcase-black-right.png";
+import cloudLeft from "../../../assets/growdex-pricing-cloud-left.png";
+import cloudRight from "../../../assets/growdex-pricing-cloud-right.png";
+import blackLeft from "../../../assets/growdex-faq-showcase-black-left.png";
+import blackRight from "../../../assets/growdex-faq-showcase-black-right.png";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 

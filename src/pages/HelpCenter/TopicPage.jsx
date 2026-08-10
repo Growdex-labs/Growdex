@@ -8,7 +8,7 @@ import Nav from "../Landing Page/HeroPage/Nav.jsx";
 import FooterSection from "../Landing Page/HeroPage/FooterSection.jsx";
 import { plansFaq } from "../Landing Page/HeroPage/footerFaq.js";
 import DarkCloudTransition from "./DarkCloudTransition.jsx";
-import featuredArt from "../../assets/New Design/growdex-help-featured-sunburst.png";
+import featuredArt from "../../assets/growdex-help-featured-sunburst.png";
 import { findTopic, HELP_HUB_PATH } from "./helpData.js";
 import { articles as popularArticles, articlePath } from "./articleData.js";
 

@@ -582,3 +582,35 @@ input[type="number"] {
     );
   }
 }
+
+/* Hero
+   Moved here from the old src/index.css, which nothing imported — main.jsx
+   only loads this file, so .hero-stage on Hero.jsx never had a min-height.
+   The .hero-wave rules have no markup using them yet; they carry the curved
+   white edges the hero design calls for. */
+.hero-stage {
+  min-height: 870px;
+}
+.hero-wave {
+  position: absolute;
+  bottom: -76px;
+  z-index: 20;
+  width: 230px;
+  height: 150px;
+  border-radius: 90px 90px 0 0;
+  background: white;
+}
+.hero-wave-left {
+  left: -80px;
+}
+.hero-wave-right {
+  right: -80px;
+}
+@media (max-width: 767px) {
+  .hero-stage {
+    min-height: 760px;
+  }
+  .hero-wave {
+    display: none;
+  }
+}

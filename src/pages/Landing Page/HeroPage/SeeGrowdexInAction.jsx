@@ -3,7 +3,7 @@ import { Play } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import cloudTuck from "../../../assets/New Design/growdex-demo-cloud-tuck.png";
+import cloudTuck from "../../../assets/growdex-demo-cloud-tuck.png";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 

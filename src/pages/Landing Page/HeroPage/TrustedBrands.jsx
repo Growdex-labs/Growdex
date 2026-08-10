@@ -2,11 +2,11 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import brandTwo from "../../../assets/New Design/growdex-trusted-brand-partner-one.png";
-import brandOne from "../../../assets/New Design/growdex-trusted-brand-partner-two.jpg";
-import brandThree from "../../../assets/New Design/growdex-trusted-brand-partner-three.png";
-import leftPills from "../../../assets/New Design/growdex-trusted-pill-left.png";
-import rightPills from "../../../assets/New Design/growdex-trusted-pill-right.png";
+import brandTwo from "../../../assets/growdex-trusted-brand-partner-one.png";
+import brandOne from "../../../assets/growdex-trusted-brand-partner-two.jpg";
+import brandThree from "../../../assets/growdex-trusted-brand-partner-three.png";
+import leftPills from "../../../assets/growdex-trusted-pill-left.png";
+import rightPills from "../../../assets/growdex-trusted-pill-right.png";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 

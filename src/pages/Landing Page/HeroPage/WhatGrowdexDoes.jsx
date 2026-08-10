@@ -2,8 +2,8 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import campaignPlatform from "../../../assets/New Design/growdex-unified-campaign-platform.png";
-import cornerPills from "../../../assets/New Design/growdex-hero-three-pill-left.png";
+import campaignPlatform from "../../../assets/growdex-unified-campaign-platform.png";
+import cornerPills from "../../../assets/growdex-hero-three-pill-left.png";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 

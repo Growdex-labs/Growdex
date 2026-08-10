@@ -4,8 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 // The white frame, tilt and drop shadow are baked into this artwork, so it
 // needs no CSS frame of its own — adding one double-framed it.
-import teamPhoto from "../../../assets/New Design/growdex-about-mission-vision.webp";
-import manualIcon from "../../../assets/New Design/growdex-about-manual-icon.png";
+import teamPhoto from "../../../assets/growdex-about-mission-vision.webp";
+import manualIcon from "../../../assets/growdex-about-manual-icon.png";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 

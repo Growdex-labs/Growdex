@@ -3,14 +3,14 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import iconCollage from "../../../assets/New Design/growdex-audience-icon-collage.webp";
-import founderPhoto from "../../../assets/New Design/growdex-audience-founder.webp";
-import smallBusinessPhoto from "../../../assets/New Design/growdex-audience-small-business.webp";
-import teamPhoto from "../../../assets/New Design/growdex-audience-team-agency.webp";
-import shadowWide from "../../../assets/New Design/growdex-audience-shadow-wide.png";
-import shadowNarrow from "../../../assets/New Design/growdex-audience-shadow-narrow.png";
-import cloudLeft from "../../../assets/New Design/growdex-audience-cloud-left.png";
-import cloudRight from "../../../assets/New Design/growdex-audience-cloud-right.png";
+import iconCollage from "../../../assets/growdex-audience-icon-collage.webp";
+import founderPhoto from "../../../assets/growdex-audience-founder.webp";
+import smallBusinessPhoto from "../../../assets/growdex-audience-small-business.webp";
+import teamPhoto from "../../../assets/growdex-audience-team-agency.webp";
+import shadowWide from "../../../assets/growdex-audience-shadow-wide.png";
+import shadowNarrow from "../../../assets/growdex-audience-shadow-narrow.png";
+import cloudLeft from "../../../assets/growdex-audience-cloud-left.png";
+import cloudRight from "../../../assets/growdex-audience-cloud-right.png";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 

@@ -4,12 +4,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import FaqItem from "./FaqItem";
 import FaqImage from "../../../assets/faq.png";
-import showcaseBackdrop from "../../../assets/New Design/growdex-faq-showcase-backdrop.png";
-import showcaseShapeLeft from "../../../assets/New Design/growdex-faq-showcase-shape-left.png";
-import showcaseShapeRight from "../../../assets/New Design/growdex-faq-showcase-shape-right.png";
-import showcaseBlackLeft from "../../../assets/New Design/growdex-faq-showcase-black-left.png";
-import showcaseBlackRight from "../../../assets/New Design/growdex-faq-showcase-black-right.png";
-import showcaseLaptop from "../../../assets/New Design/growdex-faq-laptop-campaign.webp";
+import showcaseBackdrop from "../../../assets/growdex-faq-showcase-backdrop.png";
+import showcaseShapeLeft from "../../../assets/growdex-faq-showcase-shape-left.png";
+import showcaseShapeRight from "../../../assets/growdex-faq-showcase-shape-right.png";
+import showcaseBlackLeft from "../../../assets/growdex-faq-showcase-black-left.png";
+import showcaseBlackRight from "../../../assets/growdex-faq-showcase-black-right.png";
+import showcaseLaptop from "../../../assets/growdex-faq-laptop-campaign.webp";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 

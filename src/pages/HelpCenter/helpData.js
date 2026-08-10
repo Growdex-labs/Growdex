@@ -1,9 +1,9 @@
-import iconGettingStarted from "../../assets/New Design/growdex-help-icon-getting-started.png";
-import iconCampaigns from "../../assets/New Design/growdex-help-icon-campaigns.png";
-import iconAi from "../../assets/New Design/growdex-help-icon-ai.png";
-import iconAnalytics from "../../assets/New Design/growdex-help-icon-analytics.png";
-import iconBilling from "../../assets/New Design/growdex-help-icon-billing.png";
-import iconIntegrations from "../../assets/New Design/growdex-help-icon-integrations.png";
+import iconGettingStarted from "../../assets/growdex-help-icon-getting-started.png";
+import iconCampaigns from "../../assets/growdex-help-icon-campaigns.png";
+import iconAi from "../../assets/growdex-help-icon-ai.png";
+import iconAnalytics from "../../assets/growdex-help-icon-analytics.png";
+import iconBilling from "../../assets/growdex-help-icon-billing.png";
+import iconIntegrations from "../../assets/growdex-help-icon-integrations.png";
 
 // Shared by the hub grid and the topic pages, so a card and the page it opens
 // can't disagree about its title, icon or tile colour.

@@ -2,13 +2,13 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import stickyNote from "../../../assets/New Design/growdex-about-why-note.webp";
-import paleCloud from "../../../assets/New Design/growdex-demo-cloud-tuck.png";
+import stickyNote from "../../../assets/growdex-about-why-note.webp";
+import paleCloud from "../../../assets/growdex-demo-cloud-tuck.png";
 // Same yellow and black shapes the home page FAQ uses for its dark transition.
-import yellowLeft from "../../../assets/New Design/growdex-faq-showcase-shape-left.png";
-import yellowRight from "../../../assets/New Design/growdex-faq-showcase-shape-right.png";
-import blackLeft from "../../../assets/New Design/growdex-faq-showcase-black-left.png";
-import blackRight from "../../../assets/New Design/growdex-faq-showcase-black-right.png";
+import yellowLeft from "../../../assets/growdex-faq-showcase-shape-left.png";
+import yellowRight from "../../../assets/growdex-faq-showcase-shape-right.png";
+import blackLeft from "../../../assets/growdex-faq-showcase-black-left.png";
+import blackRight from "../../../assets/growdex-faq-showcase-black-right.png";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 

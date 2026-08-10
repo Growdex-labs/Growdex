@@ -2,10 +2,10 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import heroPortrait from "../../../assets/New Design/growdex-about-hero-portrait.webp";
-import cloudKhaki from "../../../assets/New Design/growdex-about-cloud-khaki.png";
-import whiteCloudLeft from "../../../assets/New Design/growdex-hero-cloud-steps-left.png";
-import whiteCloudRight from "../../../assets/New Design/growdex-hero-cloud-steps-right.png";
+import heroPortrait from "../../../assets/growdex-about-hero-portrait.webp";
+import cloudKhaki from "../../../assets/growdex-about-cloud-khaki.png";
+import whiteCloudLeft from "../../../assets/growdex-hero-cloud-steps-left.png";
+import whiteCloudRight from "../../../assets/growdex-hero-cloud-steps-right.png";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 

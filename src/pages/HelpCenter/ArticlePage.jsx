@@ -7,11 +7,11 @@ import { useGSAP } from "@gsap/react";
 import Nav from "../Landing Page/HeroPage/Nav.jsx";
 import FooterSection from "../Landing Page/HeroPage/FooterSection.jsx";
 import DarkCloudTransition from "./DarkCloudTransition.jsx";
-import featuredArt from "../../assets/New Design/growdex-help-featured-sunburst.png";
-import slateLarge from "../../assets/New Design/growdex-article-cloud-slate-large.png";
-import slateSmall from "../../assets/New Design/growdex-article-cloud-slate-small.png";
-import whiteLeft from "../../assets/New Design/growdex-article-cloud-white-left.png";
-import whiteRight from "../../assets/New Design/growdex-article-cloud-white-right.png";
+import featuredArt from "../../assets/growdex-help-featured-sunburst.png";
+import slateLarge from "../../assets/growdex-article-cloud-slate-large.png";
+import slateSmall from "../../assets/growdex-article-cloud-slate-small.png";
+import whiteLeft from "../../assets/growdex-article-cloud-white-left.png";
+import whiteRight from "../../assets/growdex-article-cloud-white-right.png";
 import { findArticle, articles, articlePath } from "./articleData.js";
 import { HELP_HUB_PATH } from "./helpData.js";
 

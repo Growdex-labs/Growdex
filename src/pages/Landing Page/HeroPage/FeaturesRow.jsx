@@ -3,15 +3,15 @@ import { ChevronRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import audienceBuilder from "../../../assets/New Design/growdex-audience-targeting-builder.png";
-import campaignDashboard from "../../../assets/New Design/growdex-dashboard-campaign-overview.webp";
-import recommendationsPanel from "../../../assets/New Design/growdex-ai-recommendations-panel.png";
-import sideAccent from "../../../assets/New Design/growdex-workflow-pill-accent.png";
-import cloudStepsLeft from "../../../assets/New Design/growdex-workflow-cloud-steps-left.png";
-import cloudStepsRight from "../../../assets/New Design/growdex-workflow-cloud-steps-right.png";
-import performanceTab from "../../../assets/New Design/growdex-workflow-tab-performance.png";
-import manualTab from "../../../assets/New Design/growdex-workflow-tab-manual.png";
-import optimizeTab from "../../../assets/New Design/growdex-workflow-tab-optimize.png";
+import audienceBuilder from "../../../assets/growdex-audience-targeting-builder.png";
+import campaignDashboard from "../../../assets/growdex-dashboard-campaign-overview.webp";
+import recommendationsPanel from "../../../assets/growdex-ai-recommendations-panel.png";
+import sideAccent from "../../../assets/growdex-workflow-pill-accent.png";
+import cloudStepsLeft from "../../../assets/growdex-workflow-cloud-steps-left.png";
+import cloudStepsRight from "../../../assets/growdex-workflow-cloud-steps-right.png";
+import performanceTab from "../../../assets/growdex-workflow-tab-performance.png";
+import manualTab from "../../../assets/growdex-workflow-tab-manual.png";
+import optimizeTab from "../../../assets/growdex-workflow-tab-optimize.png";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 

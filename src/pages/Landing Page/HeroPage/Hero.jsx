@@ -3,11 +3,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { ArrowRight, Play } from "lucide-react";
-import dashboard from "../../../assets/New Design/growdex-dashboard-campaign-overview.webp";
-import leftSteps from "../../../assets/New Design/growdex-hero-cloud-steps-left.png";
-import rightSteps from "../../../assets/New Design/growdex-hero-cloud-steps-right.png";
-import leftPills from "../../../assets/New Design/growdex-hero-three-pill-left.png";
-import rightPills from "../../../assets/New Design/growdex-hero-three-pill-right.png";
+import dashboard from "../../../assets/growdex-dashboard-campaign-overview.webp";
+import leftSteps from "../../../assets/growdex-hero-cloud-steps-left.png";
+import rightSteps from "../../../assets/growdex-hero-cloud-steps-right.png";
+import leftPills from "../../../assets/growdex-hero-three-pill-left.png";
+import rightPills from "../../../assets/growdex-hero-three-pill-right.png";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
