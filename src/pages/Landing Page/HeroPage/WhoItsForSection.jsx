@@ -1,167 +1,294 @@
-import React, { useState } from "react";
-import {
-  ChevronsLeft,
-  ChevronsRight,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import iconCollage from "../../../assets/growdex-audience-icon-collage.webp";
+import founderPhoto from "../../../assets/growdex-audience-founder.webp";
+import smallBusinessPhoto from "../../../assets/growdex-audience-small-business.webp";
+import teamPhoto from "../../../assets/growdex-audience-team-agency.webp";
+import shadowWide from "../../../assets/growdex-audience-shadow-wide.png";
+import shadowNarrow from "../../../assets/growdex-audience-shadow-narrow.png";
+import cloudLeft from "../../../assets/growdex-audience-cloud-left.png";
+import cloudRight from "../../../assets/growdex-audience-cloud-right.png";
 
-import wif1 from "../../../assets/wif1.png";
-import wif2 from "../../../assets/wif2.png";
-import wif3 from "../../../assets/wif3.png";
-import wif4 from "../../../assets/wif4.png";
-import wif5 from "../../../assets/wif5.png";
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const audiences = [
-  { title: "Founders and operators", image: wif1 },
-  { title: "Marketing teams", image: wif2 },
-  { title: "Performance marketers", image: wif3 },
-  { title: "Agencies", image: wif4 },
-  { title: "Brands and creators running paid ads", image: wif5 },
+  {
+    id: "founders",
+    label: "Founders",
+    caption: "Launch campaigns without the learning curve.",
+    image: founderPhoto,
+    alt: "Founder standing with arms folded",
+  },
+  {
+    id: "small-business",
+    label: "Small Businesses",
+    caption: "Reach more customers with less complexity.",
+    image: smallBusinessPhoto,
+    alt: "Shop owner handing a parcel to a courier",
+  },
+  {
+    id: "teams",
+    label: "Teams and Agencies",
+    caption: "Manage multiple brands with greater efficiency.",
+    image: teamPhoto,
+    alt: "Marketing team reviewing campaign results on a laptop",
+  },
 ];
 
-const DESKTOP_CARD_WIDTH = 350;
-const DESKTOP_GAP = 24;
-const DESKTOP_STEP = DESKTOP_CARD_WIDTH + DESKTOP_GAP;
+// One slot per depth: 0 is the card in front, 2 is the one furthest back. The
+// offsets are percentages of the card's own size, so the fan holds its shape at
+// every viewport width.
+const slots = [
+  { x: 36, y: 0, rotate: 1, scale: 1, zIndex: 30 },
+  { x: 0, y: 4, rotate: -4, scale: 0.94, zIndex: 20 },
+  { x: -38, y: 7, rotate: -8, scale: 0.88, zIndex: 10 },
+];
 
 export default function WhoItsForSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  // Starts on the last card so the fan reads Founders → Small Business →
+  // Teams from the back of the stack forward.
+  const [activeIndex, setActiveIndex] = useState(audiences.length - 1);
 
-  const goToIndex = (i) =>
-    setActiveIndex(Math.max(0, Math.min(i, audiences.length - 1)));
+  // Stepping the active index *down* pulls the card sitting directly behind
+  // the front one forward, so the stack always flows left to right.
+  const showNext = () =>
+    setActiveIndex(
+      (current) => (current - 1 + audiences.length) % audiences.length,
+    );
+  const showPrevious = () =>
+    setActiveIndex((current) => (current + 1) % audiences.length);
+
+  const sectionRef = useRef(null);
+
+  useGSAP(
+    () => {
+      const media = gsap.matchMedia();
+
+      media.add("(prefers-reduced-motion: no-preference)", () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top 72%",
+              once: true,
+            },
+            defaults: { ease: "power3.out" },
+          })
+          .from(".js-audience-heading", {
+            autoAlpha: 0,
+            y: 26,
+            duration: 0.6,
+          })
+          .from(
+            ".js-audience-copy",
+            { autoAlpha: 0, y: 20, duration: 0.55 },
+            "-=0.35",
+          )
+          .from(
+            ".js-audience-collage",
+            { autoAlpha: 0, y: 34, scale: 0.94, duration: 0.7 },
+            "-=0.3",
+          )
+          // The cards' own transform belongs to the slot layout, so the
+          // entrance runs on the inner element to keep the two from fighting.
+          .from(
+            ".js-audience-card",
+            {
+              autoAlpha: 0,
+              y: 64,
+              scale: 0.9,
+              duration: 0.7,
+              stagger: 0.12,
+              clearProps: "transform",
+            },
+            "-=0.45",
+          )
+          .from(
+            ".js-audience-shadow",
+            { autoAlpha: 0, scaleX: 0.65, duration: 0.6, stagger: 0.08 },
+            "-=0.5",
+          )
+          // Arrows fade only — they are centred with a CSS translate that a
+          // GSAP transform would trample.
+          .from(
+            ".js-audience-arrow",
+            { autoAlpha: 0, duration: 0.45, stagger: 0.1 },
+            "-=0.4",
+          );
+
+        gsap.from(".js-audience-cloud", {
+          autoAlpha: 0,
+          duration: 1,
+          stagger: 0.18,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+            once: true,
+          },
+        });
+
+        // Clouds drift on scroll. This only touches transforms, while the
+        // fade above only touches opacity, so the two never overlap.
+        const drift = [
+          [".js-audience-cloud-left", { x: -34, y: 26 }, { x: 14, y: -30 }],
+          [".js-audience-cloud-right", { x: 30, y: 28 }, { x: -16, y: -24 }],
+        ];
+        drift.forEach(([target, from, to]) => {
+          gsap.fromTo(target, from, {
+            ...to,
+            ease: "none",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1.1,
+              invalidateOnRefresh: true,
+            },
+          });
+        });
+      });
+
+      media.add("(prefers-reduced-motion: reduce)", () => {
+        gsap.set(
+          ".js-audience-heading, .js-audience-copy, .js-audience-collage, .js-audience-card, .js-audience-shadow, .js-audience-arrow, .js-audience-cloud",
+          { clearProps: "all" },
+        );
+      });
+
+      return () => media.revert();
+    },
+    { scope: sectionRef },
+  );
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 overflow-x-hidden">
-      <div className="grid md:grid-cols-[1.2fr_2fr] gap-8 md:gap-16 items-center px-4 md:px-0 max-w-full">
-        {/* LEFT */}
-        <div className="space-y-6 md:space-y-10 min-w-0">
-          <span className="inline-flex rounded-full border px-4 py-1 text-xs font-semibold text-[#AD9D37]">
-            Who’s it for?
+    <section
+      ref={sectionRef}
+      className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[#FFF8CE] py-16 md:py-24"
+    >
+      {/* The left cloud runs off the edge of the page; the right one tucks in
+          beside the next-audience button. */}
+      <img
+        src={cloudLeft}
+        alt=""
+        aria-hidden="true"
+        className="js-audience-cloud js-audience-cloud-left pointer-events-none absolute left-0 top-[16%] z-0 w-[clamp(120px,17vw,265px)]"
+      />
+      <img
+        src={cloudRight}
+        alt=""
+        aria-hidden="true"
+        className="js-audience-cloud js-audience-cloud-right pointer-events-none absolute right-[3%] top-[60%] z-0 w-[clamp(95px,14vw,215px)]"
+      />
+
+      <div className="relative z-10 mx-auto max-w-[1344px] px-6 md:px-12">
+        <h2 className="js-audience-heading text-center font-gilroy-semibold text-[clamp(24px,3.1vw,40px)] leading-[1.2] tracking-[-0.02em] text-[#535353]">
+          Built for Modern{" "}
+          <span className="ml-1 inline-block rounded-full bg-[#302900] px-[0.55em] py-[0.14em] font-gilroy-bold text-white">
+            Marketing Teams
           </span>
+        </h2>
+        <p className="js-audience-copy mx-auto mt-5 max-w-[600px] text-center text-[clamp(13px,1.15vw,17px)] leading-[1.6] text-[#515151]">
+          Growing businesses, agencies, and marketing teams use Growdex to
+          simplify customer acquisition and move faster.
+        </p>
 
-          {/* MOBILE TITLE */}
-          <div className="md:hidden flex items-center gap-2 min-w-0">
-            <div className="flex items-center gap-2 min-w-0 flex-1">
-              <span className="h-4 w-1 bg-yellow-400 rounded-full shrink-0" />
-              <p className="text-lg font-semibold truncate">
-                {audiences[activeIndex].title}
-              </p>
-            </div>
+        <div className="relative mx-auto mt-2 aspect-[706/599] w-full max-w-[820px] md:mt-4">
+          {/* Only the top band of the collage shows — the cards cover the cut. */}
+          <div
+            className="js-audience-collage pointer-events-none absolute inset-x-0 top-0 h-[34%] overflow-hidden"
+            aria-hidden="true"
+          >
+            <img
+              src={iconCollage}
+              alt=""
+              className="absolute left-1/2 top-0 w-[95%] -translate-x-1/2"
+            />
+          </div>
 
-            <div className="flex shrink-0">
-              <button
-                onClick={() => goToIndex(activeIndex - 1)}
-                disabled={activeIndex === 0}
-                className="p-1 text-yellow-500 disabled:opacity-30"
+          {/* The two shadows sit side by side and overlap in the middle,
+              reading as a flattened figure-8 under the fan. */}
+          <img
+            src={shadowNarrow}
+            alt=""
+            aria-hidden="true"
+            className="js-audience-shadow absolute -bottom-[1%] left-[2%] w-[38%]"
+          />
+          <img
+            src={shadowWide}
+            alt=""
+            aria-hidden="true"
+            className="js-audience-shadow absolute -bottom-[2%] left-[28%] w-[66%]"
+          />
+
+          {audiences.map((audience, index) => {
+            const depth =
+              (activeIndex - index + audiences.length) % audiences.length;
+            const slot = slots[depth];
+            const isActive = depth === 0;
+
+            return (
+              // The wrapper owns the slot transform so the entrance animation
+              // on the button inside never collides with it.
+              <div
+                key={audience.id}
+                className="absolute left-[25%] top-[24%] w-1/2 transition-transform duration-500 ease-out"
+                style={{
+                  zIndex: slot.zIndex,
+                  transform: `translate(${slot.x}%, ${slot.y}%) rotate(${slot.rotate}deg) scale(${slot.scale})`,
+                }}
               >
-                <ChevronsLeft size={18} />
-              </button>
-              <button
-                onClick={() => goToIndex(activeIndex + 1)}
-                disabled={activeIndex === audiences.length - 1}
-                className="p-1 text-yellow-500 disabled:opacity-30"
-              >
-                <ChevronsRight size={18} />
-              </button>
-            </div>
-          </div>
-
-          {/* DESKTOP TITLE */}
-          <div className="hidden md:flex items-center gap-2">
-            <span className="h-4 w-1 bg-yellow-400 rounded-full" />
-            <p className="text-lg font-semibold text-gray-700">
-              {audiences[activeIndex].title}
-            </p>
-          </div>
-
-          {/* PROGRESS BAR — FIXED */}
-          <div className="flex gap-2 w-full overflow-hidden">
-            {audiences.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => goToIndex(i)}
-                className={`h-[3px] flex-1 rounded-full ${
-                  i === activeIndex ? "bg-yellow-400" : "bg-gray-200"
-                }`}
-              />
-            ))}
-          </div>
-
-          <h2 className="text-xl sm:text-4xl font-semibold">
-            If you run ads,
-            <br />
-            Growdex is built for you.
-          </h2>
-        </div>
-
-        {/* RIGHT */}
-        <div className="relative min-w-0">
-          {/* MOBILE CAROUSEL */}
-          <div className="md:hidden overflow-hidden w-full">
-            <div
-              className="flex transition-transform duration-500"
-              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-            >
-              {audiences.map((a) => (
-                <div key={a.title} className="w-full shrink-0 px-4">
-                  <div className="w-full rounded-3xl bg-[#FFF9D8]">
-                    <div className="flex justify-center p-6">
-                      <img
-                        src={a.image}
-                        alt={a.title}
-                        className="max-h-[220px] object-contain"
-                      />
-                    </div>
-                    <p className="pb-6 text-center font-semibold px-4">
-                      {a.title}
-                    </p>
+                <button
+                  type="button"
+                  onClick={() => setActiveIndex(index)}
+                  aria-label={`Show ${audience.label}`}
+                  aria-current={isActive}
+                  tabIndex={isActive ? -1 : 0}
+                  className={`js-audience-card block w-full rounded-[10px] bg-white p-[4.2%] text-left shadow-[0_18px_40px_rgba(80,68,0,.13)] transition-shadow duration-300 ${
+                    isActive
+                      ? "cursor-default"
+                      : "cursor-pointer hover:shadow-[0_24px_52px_rgba(80,68,0,.22)]"
+                  }`}
+                >
+                  <div className="relative">
+                    <img
+                      src={audience.image}
+                      alt={audience.alt}
+                      // Anchored to the top so the tall portrait keeps its
+                      // subject's face inside the square-ish crop.
+                      className="aspect-[320/335] w-full rounded-[6px] object-cover object-top"
+                    />
+                    <span className="absolute bottom-[-4%] left-0 rounded-full bg-[#FFE95C] px-[0.7em] py-[0.28em] font-gilroy-bold text-[clamp(13px,1.6vw,22px)] leading-tight text-[#292300]">
+                      {audience.label}
+                    </span>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
+                  <p className="mt-[7%] font-gilroy-regular text-[clamp(9px,0.95vw,13px)] leading-[1.45] text-[#4a4a4a]">
+                    {audience.caption}
+                  </p>
+                </button>
+              </div>
+            );
+          })}
 
-          {/* DESKTOP CAROUSEL */}
-          <div className="hidden md:block overflow-hidden max-w-[700px]">
-            <div
-              className="flex gap-6 transition-transform duration-500"
-              style={{
-                transform: `translateX(-${activeIndex * DESKTOP_STEP}px)`,
-              }}
-            >
-              {audiences.map((a, i) => (
-                <div key={a.title} className="w-[350px] h-[350px] shrink-0">
-                  <div
-                    className={`h-full rounded-3xl p-6 flex flex-col ${
-                      i === activeIndex ? "" : "opacity-70"
-                    }`}
-                    style={{
-                      background:
-                        "linear-gradient(256deg, #FFFFFF 46%, #FFE95C 180%)",
-                    }}
-                  >
-                    <div className="flex-1 flex items-center justify-center">
-                      <img
-                        src={a.image}
-                        alt={a.title}
-                        className="max-h-[200px]"
-                      />
-                    </div>
-                    <p className="text-center font-semibold">{a.title}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="absolute -top-10 right-0 hidden md:flex gap-2">
-              <button onClick={() => goToIndex(activeIndex - 1)}>
-                <ChevronLeft />
-              </button>
-              <button onClick={() => goToIndex(activeIndex + 1)}>
-                <ChevronRight />
-              </button>
-            </div>
-          </div>
+          <button
+            type="button"
+            onClick={showPrevious}
+            aria-label="Previous audience"
+            className="js-audience-arrow absolute left-0 top-1/2 z-40 flex h-[clamp(32px,4.4vw,48px)] w-[clamp(32px,4.4vw,48px)] -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#3f3f3f] shadow-[0_6px_18px_rgba(80,68,0,.18)] transition-colors hover:bg-[#FFE95C]"
+          >
+            <ChevronLeft className="h-1/2 w-1/2" strokeWidth={2.5} />
+          </button>
+          <button
+            type="button"
+            onClick={showNext}
+            aria-label="Next audience"
+            className="js-audience-arrow absolute right-0 top-1/2 z-40 flex h-[clamp(32px,4.4vw,48px)] w-[clamp(32px,4.4vw,48px)] -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#3f3f3f] shadow-[0_6px_18px_rgba(80,68,0,.18)] transition-colors hover:bg-[#FFE95C]"
+          >
+            <ChevronRight className="h-1/2 w-1/2" strokeWidth={2.5} />
+          </button>
         </div>
       </div>
     </section>
