@@ -9,7 +9,6 @@ import cloudLeftSmall from "../../../assets/growdex-footer-cloud-left-small.png"
 import cloudRight from "../../../assets/growdex-footer-cloud-right.png";
 import helpMark from "../../../assets/growdex-footer-help-mark.png";
 import logoMark from "../../../assets/growdex-footer-logo-mark.png";
-import BookDemoForm from "../../../components/BookDemoForm.jsx";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -58,7 +57,7 @@ export default function FooterSection({
   primaryLabel = "Start for free",
   primaryHref = "https://app.growdex.ai",
   secondaryLabel = "Book a demo",
-  secondaryHref = "#book-demo",
+  secondaryHref = "/book-demo",
   // Optional FAQ block rendered above the CTA: [{ question, answer }].
   faq = null,
   faqTitle = "Frequently Asked Questions",
@@ -225,27 +224,6 @@ export default function FooterSection({
             </div>
             </div>
           </div>
-
-          <section
-            id="book-demo"
-            className="mx-auto -mt-4 max-w-2xl pb-16 md:-mt-8 md:pb-24"
-          >
-            <div className="rounded-[20px] border border-white/[0.12] bg-[#1c1c1c] p-6 md:p-8">
-              <p className="text-xs font-gilroy-semibold uppercase tracking-[0.16em] text-[#FFE95C]">
-                Talk to the team
-              </p>
-              <h3 className="mt-3 font-gilroy-bold text-2xl tracking-[-0.02em] text-white md:text-3xl">
-                See Growdex in your marketing workflow.
-              </h3>
-              <p className="mt-3 max-w-xl text-sm leading-6 text-[#b5b5b5]">
-                Tell us where your campaigns are getting stuck. We will show you
-                the relevant workflow, not a generic tour.
-              </p>
-              <div className="mt-6">
-                <BookDemoForm />
-              </div>
-            </div>
-          </section>
 
           <div className="grid gap-5 pb-16 md:pb-20 lg:grid-cols-[1fr_320px]">
             <div className="js-footer-card relative overflow-hidden rounded-[20px] border border-white/[0.06] bg-[#1c1c1c] px-6 py-8 md:px-10 md:py-10">

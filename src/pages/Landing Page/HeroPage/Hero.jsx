@@ -132,7 +132,7 @@ export default function Hero() {
               <span className="grid h-5 w-5 place-items-center rounded-full bg-white/85 text-black"><ArrowRight size={12} /></span>
               Start for free
             </a>
-            <a href="#book-demo" className="inline-flex min-w-[142px] items-center justify-center gap-2 rounded-[9px] border border-[#242000] px-5 py-3 text-sm text-[#171717] transition duration-200 hover:-translate-y-1 hover:bg-[#fff3aa] active:scale-[.97]">
+            <a href="/book-demo" className="inline-flex min-w-[142px] items-center justify-center gap-2 rounded-[9px] border border-[#242000] px-5 py-3 text-sm text-[#171717] transition duration-200 hover:-translate-y-1 hover:bg-[#fff3aa] active:scale-[.97]">
               <Play size={13} fill="currentColor" /> Book a demo
             </a>
           </div>
