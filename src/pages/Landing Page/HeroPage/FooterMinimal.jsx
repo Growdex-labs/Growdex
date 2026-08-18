@@ -317,7 +317,7 @@ This Cookie Policy explains how Growdex ("we", "our", "us") uses cookies and sim
                   <FooterLink href="/agency#case-studies">
                     Case Studies
                   </FooterLink>
-                  <FooterLink href="#waitlist-banner">
+                  <FooterLink href="#book-demo">
                     Book a Free Strategy Call
                   </FooterLink>
                 </FooterSection>
