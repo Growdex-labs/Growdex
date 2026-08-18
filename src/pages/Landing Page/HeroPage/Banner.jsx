@@ -1,5 +1,6 @@
 import React from "react";
 import JoinWaitlist from "../../../components/JoinWaitlist";
+import BookDemoForm from "../../../components/BookDemoForm";
 
 function Banner() {
   return (
@@ -16,7 +17,8 @@ function Banner() {
       </div>
 
       {/* Foreground card */}
-      <div className="z-10 bg-black text-white px-8 py-12 rounded-[2rem] max-w-3xl w-full text-center shadow-lg">
+      <div className="z-10 grid max-w-5xl gap-6 text-white lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="bg-black px-8 py-12 rounded-[2rem] w-full text-center shadow-lg">
   <h1 className="text-4xl md:text-3xl font-extrabold mb-4">
     {/* Large screen */}
     <span className="hidden sm:inline">
@@ -47,6 +49,16 @@ function Banner() {
     </div>
   </div>
 </div>
+
+      <section id="book-demo" className="rounded-[2rem] bg-zinc-950 px-7 py-8 shadow-lg sm:px-9 sm:py-10">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-yellow-200">Talk to the team</p>
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-white">See Growdex in your marketing workflow.</h2>
+        <p className="mt-3 max-w-lg text-sm leading-6 text-zinc-300">Tell us where your campaigns are getting stuck. We will show you the relevant workflow, not a generic tour.</p>
+        <div className="mt-6">
+          <BookDemoForm />
+        </div>
+      </section>
+      </div>
 
     </div>
   );
