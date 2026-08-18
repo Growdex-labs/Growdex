@@ -9,6 +9,7 @@ import HelpCenter from "./pages/HelpCenter/index.jsx";
 import BlogPage from "./pages/HelpCenter/BlogPage.jsx";
 import TopicPage from "./pages/HelpCenter/TopicPage.jsx";
 import ArticlePage from "./pages/HelpCenter/ArticlePage.jsx";
+import BookDemoPage from "./pages/Landing Page/BookDemoPage.jsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/agency" element={<AgencyPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/pricing" element={<PricingPage />} />
+      <Route path="/book-demo" element={<BookDemoPage />} />
       {/* The old GrowdexBlog listing fetched posts and blocked on <Loader/>;
           the redesigned resources UI renders in its place with no data
           dependency. See git history if that fetch logic is needed again. */}
