@@ -128,11 +128,11 @@ export default function Hero() {
           </p>
 
           <div className="js-hero-actions mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a href="#waitlist-banner" className="inline-flex min-w-[154px] items-center justify-center gap-3 rounded-[9px] bg-[#101010] px-5 py-3 text-sm text-white shadow-[0_8px_20px_rgba(0,0,0,.13)] transition-transform duration-200 hover:-translate-y-1 active:scale-[.97]">
+            <a href="https://app.growdex.ai" className="inline-flex min-w-[154px] items-center justify-center gap-3 rounded-[9px] bg-[#101010] px-5 py-3 text-sm text-white shadow-[0_8px_20px_rgba(0,0,0,.13)] transition-transform duration-200 hover:-translate-y-1 active:scale-[.97]">
               <span className="grid h-5 w-5 place-items-center rounded-full bg-white/85 text-black"><ArrowRight size={12} /></span>
               Start for free
             </a>
-            <a href="#waitlist-banner" className="inline-flex min-w-[142px] items-center justify-center gap-2 rounded-[9px] border border-[#242000] px-5 py-3 text-sm text-[#171717] transition duration-200 hover:-translate-y-1 hover:bg-[#fff3aa] active:scale-[.97]">
+            <a href="#book-demo" className="inline-flex min-w-[142px] items-center justify-center gap-2 rounded-[9px] border border-[#242000] px-5 py-3 text-sm text-[#171717] transition duration-200 hover:-translate-y-1 hover:bg-[#fff3aa] active:scale-[.97]">
               <Play size={13} fill="currentColor" /> Book a demo
             </a>
           </div>

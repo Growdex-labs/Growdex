@@ -254,7 +254,7 @@ function PlanCard({ plan }) {
           </button>
 
           <a
-            href="#waitlist-banner"
+            href={plan.id === "free" ? "https://app.growdex.ai" : "#waitlist-banner"}
             className={`inline-flex shrink-0 items-center gap-2 rounded-[8px] px-5 py-2.5 font-gilroy-semibold text-[clamp(11px,1vw,13px)] transition-colors ${plan.cta.className}`}
           >
             {plan.cta.icon ? <plan.cta.icon className="h-3.5 w-3.5" /> : null}
