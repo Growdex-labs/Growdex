@@ -74,7 +74,7 @@ export default function Nav() {
             href="https://app.growdex.ai"
             className="hidden rounded-[10px] bg-white px-5 py-3 text-[12px] font-semibold text-[#161616] transition-transform hover:-translate-y-0.5 md:block"
           >
-            Start for free
+            Login
           </a>
           <button
             type="button"
