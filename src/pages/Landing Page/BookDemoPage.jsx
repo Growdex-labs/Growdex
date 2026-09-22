@@ -25,9 +25,10 @@ export default function BookDemoPage() {
           </Link>
           <a
             href="https://app.growdex.ai"
+            aria-label="Login to Growdex"
             className="rounded-[8px] bg-white px-4 py-2 text-xs font-gilroy-semibold text-[#171717] transition-colors hover:bg-[#FFE95C]"
           >
-            Start for free
+            Login
           </a>
         </header>
 
