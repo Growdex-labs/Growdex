@@ -15,6 +15,7 @@ const LandingPage = () => {
   return (
     <div
       id="home"
+      aria-label="Growdex waitlist landing page"
       className="font-sans max-w-6xl lg:max-w-[1440px] mx-auto relative min-h-screen overflow-x-hidden px-6 md:px-12"
     >
       <Nav />

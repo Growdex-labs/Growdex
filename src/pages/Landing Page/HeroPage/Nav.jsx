@@ -69,6 +69,11 @@ const Nav = () => {
     <span className="pointer-events-none absolute left-1/2 top-full mt-0 h-[2px] w-1/2 -translate-x-1/2 rounded-full bg-[#AD9D37]" />
   );
 
+
+  const ActiveUnderline = () => (
+    <span className="pointer-events-none absolute left-1/2 top-full mt-0 h-[2px] w-1/2 -translate-x-1/2 rounded-full bg-[#AD9D37]" />
+  );
+
   // Lock body scroll when menu is open
   useEffect(() => {
     if (isOpen) {

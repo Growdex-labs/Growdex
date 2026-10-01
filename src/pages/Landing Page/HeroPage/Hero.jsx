@@ -97,12 +97,17 @@ export default function HeroSection() {
       <div className="hidden md:block pointer-events-none absolute inset-x-0 bottom-0 z-20 h-[32rem] bg-gradient-to-b from-white/0 from-0% via-white via-[60%] to-white to-100%" />
 
       <div className="relative z-10 text-center">
+        <p className="mx-auto mb-4 w-fit rounded-full border border-[#AD9D37]/30 bg-yellow-100 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#6F6400]">
+          Growdex is currently in beta
+        </p>
         <h1 className="px-4 text-[32px] sm:text-4xl md:text-5xl lg:text-6xl leading-tight text-gray-900">
           <span className="block font-semibold">All your ad platforms.</span>
           <span className="block font-extrabold">One unified dashboard.</span>
         </h1>
 
         <p className="mt-4 sm:mt-5 text-[13px] sm:text-base md:text-lg text-gray-600 max-w-[28rem] mx-auto px-4">
+          Join the waitlist for early access to one place where you can plan,
+          launch, manage, and optimize ads across platforms,
           Plan, launch, manage, and optimize ads across platforms from one
           place,
           <span className="font-semibold text-gray-900">
