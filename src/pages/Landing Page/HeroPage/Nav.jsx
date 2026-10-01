@@ -69,6 +69,11 @@ const Nav = () => {
     <span className="pointer-events-none absolute left-1/2 top-full mt-0 h-[2px] w-1/2 -translate-x-1/2 rounded-full bg-[#AD9D37]" />
   );
 
+
+  const ActiveUnderline = () => (
+    <span className="pointer-events-none absolute left-1/2 top-full mt-0 h-[2px] w-1/2 -translate-x-1/2 rounded-full bg-[#AD9D37]" />
+  );
+
   // Lock body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
@@ -143,6 +148,48 @@ const Nav = () => {
           </div>
 
           {/* Mobile: Menu button only (matches screenshot) */}
+    <>
+      <motion.header
+        initial={{ opacity: 0, y: reduceMotion ? 0 : -16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: reduceMotion ? 0 : 0.55,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className={`fixed inset-x-0 top-0 z-50 px-4 transition-all duration-300 md:px-8 ${scrolled ? "pt-3" : "pt-5 md:pt-7"}`}
+      >
+        <div
+          className={`mx-auto flex max-w-[1344px] items-center justify-between rounded-[15px] border border-white/10 bg-[#101010] px-4 py-2.5 text-white transition-shadow duration-300 md:px-5 ${scrolled ? "shadow-[0_14px_36px_rgba(0,0,0,.2)]" : ""}`}
+        >
+          <Link to="/" className="flex items-center gap-2 text-white">
+            <img
+              src={logo}
+              alt=""
+              className="h-7 w-7 object-contain brightness-0 invert"
+            />
+            <span className="font-gilroy-bold text-xl">Growdex</span>
+          </Link>
+          <nav className="hidden items-center gap-8 text-[12px] text-white/65 md:flex">
+            {links.map((link) => {
+              const cls = `transition-colors hover:text-white ${isActive(link) ? "text-white" : ""}`;
+              return link.to ? (
+                <Link key={link.label} to={link.to} className={cls}>
+                  {link.label}
+                </Link>
+              ) : (
+                <a key={link.label} href={link.href} className={cls}>
+                  {link.label}
+                </a>
+              );
+            })}
+          </nav>
+          <a
+            href="/#waitlist-banner"
+            aria-label="Join the Growdex waitlist"
+            className="hidden rounded-[10px] bg-white px-5 py-3 text-[12px] font-semibold text-[#161616] transition-transform hover:-translate-y-0.5 md:block"
+          >
+            Join waitlist
+          </a>
           <button
             onClick={() => setIsOpen(true)}
             className="md:hidden inline-flex items-center gap-2 rounded-lg bg-[#2B2B2B] px-4 py-2 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(0,0,0,0.18)]"
@@ -230,6 +277,19 @@ const Nav = () => {
         </div>
       )}
     </div>
+              })}
+            </motion.nav>
+            <a
+              href="/#waitlist-banner"
+              onClick={() => setOpen(false)}
+              className="mt-10 inline-flex w-full items-center justify-center rounded-[10px] bg-white px-5 py-4 text-sm font-semibold text-[#161616]"
+            >
+              Join waitlist
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
