@@ -71,11 +71,11 @@ export default function Nav() {
             })}
           </nav>
           <a
-            href="https://app.growdex.ai"
-            aria-label="Login to Growdex"
+            href="/#waitlist-banner"
+            aria-label="Join the Growdex waitlist"
             className="hidden rounded-[10px] bg-white px-5 py-3 text-[12px] font-semibold text-[#161616] transition-transform hover:-translate-y-0.5 md:block"
           >
-            Login
+            Join waitlist
           </a>
           <button
             type="button"
@@ -159,6 +159,13 @@ export default function Nav() {
                 );
               })}
             </motion.nav>
+            <a
+              href="/#waitlist-banner"
+              onClick={() => setOpen(false)}
+              className="mt-10 inline-flex w-full items-center justify-center rounded-[10px] bg-white px-5 py-4 text-sm font-semibold text-[#161616]"
+            >
+              Join waitlist
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

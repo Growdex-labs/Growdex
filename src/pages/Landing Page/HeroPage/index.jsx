@@ -7,6 +7,7 @@ import WhoItsForSection from "./WhoItsForSection.jsx";
 import EverythingYouNeed from "./EverythingYouNeed.jsx";
 import SeeGrowdexInAction from "./SeeGrowdexInAction.jsx";
 import FrequentlyAskedQuestions from "./FrequentlyAskedQuestions.jsx";
+import Banner from "./Banner.jsx";
 import FooterSection from "./FooterSection.jsx";
 
 export default function LandingPage() {
@@ -22,6 +23,7 @@ export default function LandingPage() {
         <EverythingYouNeed />
         <SeeGrowdexInAction />
         <FrequentlyAskedQuestions />
+        <Banner />
         <FooterSection />
       </main>
     </div>
