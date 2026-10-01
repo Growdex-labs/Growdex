@@ -9,6 +9,7 @@ import DevicePreviewSection from "./DevicePreviewSection.jsx";
 import FrequentlyAskedQuestions from "./FrequentlyAskedQuestions.jsx";
 import Banner from "./Banner.jsx";
 import Footer from "./FooterMinimal.jsx";
+import FooterSection from "./FooterSection.jsx";
 
 const LandingPage = () => {
   return (
@@ -29,6 +30,17 @@ const LandingPage = () => {
       <FrequentlyAskedQuestions />
       <Banner />
       <Footer />
+      <TrustedBrands />
+      <main className="mx-auto max-w-[1440px] px-6 md:px-12">
+        <WhatGrowdexDoes />
+        <FeaturesRow />
+        <WhoItsForSection />
+        <EverythingYouNeed />
+        <SeeGrowdexInAction />
+        <FrequentlyAskedQuestions />
+        <Banner />
+        <FooterSection />
+      </main>
     </div>
   );
 };
