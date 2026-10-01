@@ -108,6 +108,8 @@ export default function HeroSection() {
         <p className="mt-4 sm:mt-5 text-[13px] sm:text-base md:text-lg text-gray-600 max-w-[28rem] mx-auto px-4">
           Join the waitlist for early access to one place where you can plan,
           launch, manage, and optimize ads across platforms,
+          Plan, launch, manage, and optimize ads across platforms from one
+          place,
           <span className="font-semibold text-gray-900">
             {" "}
             powered by AI that brings clarity to your growth.
@@ -120,6 +122,46 @@ export default function HeroSection() {
               Join the waitlist
             </button>
           </a>
+      <div className="relative z-10 mx-auto max-w-[1440px] text-center">
+        <div className="js-hero-copy">
+          <h1 className="mx-auto max-w-[1344px] font-gilroy-semibold text-[40px] leading-[1.12] tracking-[-0.04em] sm:text-[44px] md:text-[clamp(38px,4.2vw,61px)]">
+            <span className="js-hero-line md:whitespace-nowrap">
+              Create,{" "}
+              <span className="mx-1 inline-block -rotate-2 rounded-full bg-[#211d02] px-5 py-1 text-white transition-transform duration-300 hover:-rotate-1 hover:scale-[1.025]">
+                launch
+              </span>
+              , manage, and
+            </span>
+            <span className="js-hero-line block md:whitespace-nowrap">
+              optimize Meta and TikTok{" "}
+              <span className="inline-block rounded-full border border-[#595959] bg-[#8b8c94] px-4 py-0.5 text-white">
+                campaigns
+              </span>
+            </span>
+            <span className="js-hero-line block md:whitespace-nowrap">
+              from one{" "}
+              <span className="inline-block rounded-full border border-[#725188] bg-[#d99af9] px-4 py-0.5 text-white">
+                intelligent
+              </span>{" "}
+              platform
+            </span>
+          </h1>
+
+          <p className="js-hero-support mx-auto mt-9 max-w-[760px] text-[14px] leading-7 text-[#393939] sm:text-base">
+            The all-in-one platform for creating, launching, managing, and
+            optimizing high-performing ad campaigns, helping you save time, make
+            smarter decisions, and drive better marketing results.
+          </p>
+
+          <div className="js-hero-actions mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a href="#waitlist-banner" className="inline-flex min-w-[154px] items-center justify-center gap-3 rounded-[9px] bg-[#101010] px-5 py-3 text-sm text-white shadow-[0_8px_20px_rgba(0,0,0,.13)] transition-transform duration-200 hover:-translate-y-1 active:scale-[.97]">
+              <span className="grid h-5 w-5 place-items-center rounded-full bg-white/85 text-black"><ArrowRight size={12} /></span>
+              Join waitlist
+            </a>
+            <a href="/book-demo" className="inline-flex min-w-[142px] items-center justify-center gap-2 rounded-[9px] border border-[#242000] px-5 py-3 text-sm text-[#171717] transition duration-200 hover:-translate-y-1 hover:bg-[#fff3aa] active:scale-[.97]">
+              <Play size={13} fill="currentColor" /> Book a demo
+            </a>
+          </div>
         </div>
 
         {/* Dashboard / mockup */}
