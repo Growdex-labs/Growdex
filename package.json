@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/generate-social-preview.mjs",
+    "check:waitlist": "node scripts/check-waitlist-landing.mjs",
+    "deploy:vps": "sh scripts/deploy-vps.sh",
     "lint": "eslint .",
     "preview": "vite preview"
   },
