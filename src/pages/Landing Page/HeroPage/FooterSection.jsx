@@ -54,8 +54,8 @@ export default function FooterSection({
   highlight = "Smarter Campaigns?",
   copy = "Bring your campaign creation, management, and optimization into one platform. Spend less time managing tools. ",
   copyStrong = "Spend more time growing your business.",
-  primaryLabel = "Start for free",
-  primaryHref = "https://app.growdex.ai",
+  primaryLabel = "Join the waitlist",
+  primaryHref = "#waitlist-banner",
   secondaryLabel = "Book a demo",
   secondaryHref = "/book-demo",
   // Optional FAQ block rendered above the CTA: [{ question, answer }].
